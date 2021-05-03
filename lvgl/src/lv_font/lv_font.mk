@@ -1,0 +1,39 @@
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_fmt_txt.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_loader.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_montserrat_8.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_montserrat_10.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_montserrat_12.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_montserrat_14.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_montserrat_16.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_montserrat_18.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_montserrat_20.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_montserrat_22.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_montserrat_24.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_montserrat_26.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_montserrat_28.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_montserrat_30.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_montserrat_32.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_montserrat_34.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_montserrat_36.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_montserrat_38.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_montserrat_40.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_montserrat_42.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_montserrat_44.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_montserrat_46.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_montserrat_48.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_montserrat_12_subpx.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_montserrat_28_compressed.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_unscii_8.c
+CSRCS += $(LVGL_DIR)/src/lv_font/lv_font_dejavu_16_persian_hebrew.c
+
+CSRCS += $(LVGL_DIR)/src/lv_font/montserrat_10medium_1bp.c
+CSRCS += $(LVGL_DIR)/src/lv_font/montserrat_12medium_1bp.c
+CSRCS += $(LVGL_DIR)/src/lv_font/montserrat_12medium_4bp.c
+CSRCS += $(LVGL_DIR)/src/lv_font/montserrat_14medium_1bp.c
+CSRCS += $(LVGL_DIR)/src/lv_font/montserrat_14medium_4bp.c
+
+DEPPATH += --dep-path $(LVGL_DIR)/src/lv_font
+VPATH += $(LVGL_DIR)/src/lv_font
+
+CFLAGS += "-I$(LVGL_DIR)/src/lv_font"

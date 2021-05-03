@@ -1,0 +1,101 @@
+"C:\Program Files\JetBrains\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=C:/Users/error414/Documents/STM32-tools/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc.exe -DCMAKE_CXX_COMPILER=C:/Users/error414/Documents/STM32-tools/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-g++.exe -G "CodeBlocks - MinGW Makefiles" C:\Users\error414\Documents\STM32\meteo-F4\src
+-- No TARGET_TRIPLET specified, using default: arm-none-eabi
+NOTFOUND	./cfg
+DIR	../ChibiOS/os/license
+DIR	../ChibiOS/os/license
+DIR	../ChibiOS/os/common/portability/GCC
+DIR	../ChibiOS/os/common/startup/ARMCMx/compilers/GCC
+DIR	../ChibiOS/os/common/startup/ARMCMx/devices/STM32F4xx
+DIR	../ChibiOS/os/common/ext/ARM/CMSIS/Core/Include
+DIR	../ChibiOS/os/common/ext/ST/STM32F4xx
+DIR	../ChibiOS/os/hal/include
+DIR	../ChibiOS/os/hal/ports/common/ARMCMx
+DIR	../ChibiOS/os/hal/ports/STM32/STM32F4xx
+DIR	../ChibiOS/os/hal/ports/STM32/LLD/ADCv2
+DIR	../ChibiOS/os/hal/ports/STM32/LLD/CANv1
+DIR	../ChibiOS/os/hal/ports/STM32/LLD/CRYPv1
+DIR	../ChibiOS/os/hal/ports/STM32/LLD/DACv1
+DIR	../ChibiOS/os/hal/ports/STM32/LLD/DMAv2
+DIR	../ChibiOS/os/hal/ports/STM32/LLD/EXTIv1
+DIR	../ChibiOS/os/hal/ports/STM32/LLD/GPIOv2
+DIR	../ChibiOS/os/hal/ports/STM32/LLD/I2Cv1
+DIR	../ChibiOS/os/hal/ports/STM32/LLD/MACv1
+DIR	../ChibiOS/os/hal/ports/STM32/LLD/OTGv1
+DIR	../ChibiOS/os/hal/ports/STM32/LLD/QUADSPIv1
+DIR	../ChibiOS/os/hal/ports/STM32/LLD/RTCv2
+DIR	../ChibiOS/os/hal/ports/STM32/LLD/SPIv1
+DIR	../ChibiOS/os/hal/ports/STM32/LLD/SDIOv1
+DIR	../ChibiOS/os/hal/ports/STM32/LLD/TIMv1
+DIR	../ChibiOS/os/hal/ports/STM32/LLD/USART
+DIR	../ChibiOS/os/hal/ports/STM32/LLD/USARTv1
+DIR	../ChibiOS/os/hal/ports/STM32/LLD/xWDGv1
+DIR	../ChibiOS/os/hal/osal/rt-nil
+DIR	../ChibiOS/os/rt/include
+DIR	../ChibiOS/os/oslib/include
+DIR	../ChibiOS/os/common/ports/ARMv7-M
+DIR	../ChibiOS/os/common/ports/ARMv7-M/compilers/GCC
+DIR	../ChibiOS/os/hal/lib/streams
+FILE	../ChibiOS/os/common/startup/ARMCMx/compilers/GCC/crt1.c
+FILE	../ChibiOS/os/hal/src/hal.c
+FILE	../ChibiOS/os/hal/src/hal_st.c
+FILE	../ChibiOS/os/hal/src/hal_buffers.c
+FILE	../ChibiOS/os/hal/src/hal_queues.c
+FILE	../ChibiOS/os/hal/src/hal_flash.c
+FILE	../ChibiOS/os/hal/src/hal_mmcsd.c
+FILE	../ChibiOS/os/hal/src/hal_i2c.c
+FILE	../ChibiOS/os/hal/src/hal_pal.c
+FILE	../ChibiOS/os/hal/src/hal_pwm.c
+FILE	../ChibiOS/os/hal/src/hal_serial.c
+FILE	../ChibiOS/os/hal/src/hal_spi.c
+FILE	../ChibiOS/os/hal/ports/common/ARMCMx/nvic.c
+FILE	../ChibiOS/os/hal/ports/STM32/STM32F4xx/stm32_isr.c
+FILE	../ChibiOS/os/hal/ports/STM32/STM32F4xx/hal_lld.c
+FILE	../ChibiOS/os/hal/ports/STM32/STM32F4xx/hal_efl_lld.c
+FILE	../ChibiOS/os/hal/ports/STM32/LLD/DMAv2/stm32_dma.c
+FILE	../ChibiOS/os/hal/ports/STM32/LLD/EXTIv1/stm32_exti.c
+FILE	../ChibiOS/os/hal/ports/STM32/LLD/GPIOv2/hal_pal_lld.c
+FILE	../ChibiOS/os/hal/ports/STM32/LLD/I2Cv1/hal_i2c_lld.c
+FILE	../ChibiOS/os/hal/ports/STM32/LLD/SPIv1/hal_spi_lld.c
+FILE	../ChibiOS/os/hal/ports/STM32/LLD/TIMv1/hal_st_lld.c
+FILE	../ChibiOS/os/hal/ports/STM32/LLD/TIMv1/hal_pwm_lld.c
+FILE	../ChibiOS/os/hal/ports/STM32/LLD/USARTv1/hal_serial_lld.c
+FILE	../ChibiOS/os/hal/osal/rt-nil/osal.c
+FILE	../ChibiOS/os/rt/src/chsys.c
+FILE	../ChibiOS/os/rt/src/chdebug.c
+FILE	../ChibiOS/os/rt/src/chtrace.c
+FILE	../ChibiOS/os/rt/src/chvt.c
+FILE	../ChibiOS/os/rt/src/chschd.c
+FILE	../ChibiOS/os/rt/src/chinstances.c
+FILE	../ChibiOS/os/rt/src/chthreads.c
+FILE	../ChibiOS/os/rt/src/chtm.c
+FILE	../ChibiOS/os/rt/src/chregistry.c
+FILE	../ChibiOS/os/rt/src/chsem.c
+FILE	../ChibiOS/os/rt/src/chmtx.c
+FILE	../ChibiOS/os/rt/src/chcond.c
+FILE	../ChibiOS/os/rt/src/chevents.c
+FILE	../ChibiOS/os/rt/src/chmsg.c
+FILE	../ChibiOS/os/rt/src/chdynamic.c
+FILE	../ChibiOS/os/oslib/src/chmboxes.c
+FILE	../ChibiOS/os/oslib/src/chmemcore.c
+FILE	../ChibiOS/os/oslib/src/chmemheaps.c
+FILE	../ChibiOS/os/oslib/src/chmempools.c
+FILE	../ChibiOS/os/oslib/src/chpipes.c
+FILE	../ChibiOS/os/oslib/src/chobjcaches.c
+FILE	../ChibiOS/os/oslib/src/chdelegates.c
+FILE	../ChibiOS/os/oslib/src/chfactory.c
+FILE	../ChibiOS/os/common/ports/ARMv7-M/chcore.c
+FILE	../ChibiOS/os/hal/lib/streams/chprintf.c
+FILE	../ChibiOS/os/hal/lib/streams/chscanf.c
+FILE	../ChibiOS/os/hal/lib/streams/memstreams.c
+FILE	../ChibiOS/os/hal/lib/streams/nullstreams.c
+FILE	../ChibiOS/os/hal/lib/streams/bufstreams.c
+FILE	../ChibiOS/os/common/startup/ARMCMx/compilers/GCC/crt0_v7m.S
+FILE	../ChibiOS/os/common/startup/ARMCMx/compilers/GCC/vectors.S
+FILE	../ChibiOS/os/common/ports/ARMv7-M/compilers/GCC/chcoreasm.S
+NOTFOUND	
+
+C:/Users/error414/Documents/STM32/meteo-F4/src/../lvgl/srcC:/Users/error414/Documents/STM32/meteo-F4/src/../lvglC:/Users/error414/Documents/STM32/meteo-F4/src/../lvgl/../
+-- STM32F401RE has 512KiB of flash memory and 96KiB of RAM
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/error414/Documents/STM32/meteo-F4/src/cmake-build-debug
