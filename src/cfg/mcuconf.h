@@ -142,7 +142,7 @@
 /*
  * I2S driver system settings.
  */
-#define STM32_I2S_USE_SPI2                  FALSE
+#define STM32_I2S_USE_SPI2                  TRUE
 #define STM32_I2S_USE_SPI3                  FALSE
 #define STM32_I2S_SPI2_IRQ_PRIORITY         10
 #define STM32_I2S_SPI3_IRQ_PRIORITY         10
@@ -170,9 +170,9 @@
  * PWM driver system settings.
  */
 #define STM32_PWM_USE_ADVANCED              FALSE
-#define STM32_PWM_USE_TIM1                  TRUE
+#define STM32_PWM_USE_TIM1                  FALSE
 #define STM32_PWM_USE_TIM2                  FALSE
-#define STM32_PWM_USE_TIM3                  TRUE
+#define STM32_PWM_USE_TIM3                  FALSE
 #define STM32_PWM_USE_TIM4                  FALSE
 #define STM32_PWM_USE_TIM5                  FALSE
 #define STM32_PWM_USE_TIM9                  FALSE
@@ -184,13 +184,13 @@
  */
 #define STM32_SERIAL_USE_USART1             FALSE
 #define STM32_SERIAL_USE_USART2             TRUE
-#define STM32_SERIAL_USE_USART6             FALSE
+#define STM32_SERIAL_USE_USART6             TRUE
 
 /*
  * SPI driver system settings.
  */
 #define STM32_SPI_USE_SPI1                  TRUE
-#define STM32_SPI_USE_SPI2                  TRUE
+#define STM32_SPI_USE_SPI2                  FALSE
 #define STM32_SPI_USE_SPI3                  FALSE
 #define STM32_SPI_SPI1_RX_DMA_STREAM        STM32_DMA_STREAM_ID(2, 0)
 #define STM32_SPI_SPI1_TX_DMA_STREAM        STM32_DMA_STREAM_ID(2, 3)

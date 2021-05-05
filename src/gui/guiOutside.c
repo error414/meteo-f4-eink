@@ -1,6 +1,8 @@
 #include "guiMain.h"
 #include "guiOutside.h"
-
+#include "ch.h"
+#include "hal.h"
+#include "chprintf.h"
 
 static struct guiOutsideObject_t{
     lv_obj_t* battIcon;
@@ -17,7 +19,13 @@ static struct guiOutsideObject_t{
 
 lv_chart_series_t * guiOutsideChartTempSer;
 
-
+/**
+ *
+ * @param parent
+ * @param posY
+ * @param height
+ * @param name
+ */
 void guiInitOutside(lv_obj_t *parent, uint16_t posY, uint16_t height, const char *name){
     lv_obj_t * labelLeftBlock = lv_obj_create(parent, NULL);
     lv_obj_add_style(labelLeftBlock, LV_OBJ_PART_MAIN, &noBorder);
@@ -209,38 +217,44 @@ void guiInitOutside(lv_obj_t *parent, uint16_t posY, uint16_t height, const char
     guiOutsideChartTempSer = lv_chart_add_series(guiOutsideObject.tempChart, LV_COLOR_BLACK);
 }
 
+/**
+ *
+ * @param values
+ */
 void guiFillOutsideAll(guiOutsideValues_t* values){
-    /*if(values->voltagePercent < 10){
-        lv_img_set_src(guiOutsideObject.battIcon, &batt20);
-    }else if(values->voltagePercent < 30){
-        lv_img_set_src(guiOutsideObject.battIcon, &batt20);
-    }else if(values->voltagePercent < 60){
-        lv_img_set_src(guiOutsideObject.battIcon, &batt20);
-    }else if(values->voltagePercent < 90){
-        lv_img_set_src(guiOutsideObject.battIcon, &batt20);
-    }else {
-        lv_img_set_src(guiOutsideObject.battIcon, &batt20);
-    }*/
-    //lv_obj_align(guiOutsideObject.battIcon, NULL, LV_ALIGN_IN_RIGHT_MID, -50, 0);
-
     ///////////////////////////////////////////////////////////////////////////////
-    lv_label_set_text(guiOutsideObject.battLabel, "4.15V");
-    lv_label_set_text(guiOutsideObject.tempLabel, "12.6");
-    lv_label_set_text(guiOutsideObject.humidityLabel, "40");
-    lv_label_set_text(guiOutsideObject.presureLabel, "1250");
-    lv_label_set_text(guiOutsideObject.windLabel, "12.6");
+	char bufferBattLabel[10];
+	chsnprintf(bufferBattLabel, sizeof(bufferBattLabel), "%.2fV", (float)values->voltage / 100.0f);
+    lv_label_set_text(guiOutsideObject.battLabel, bufferBattLabel);
 
-    lv_img_set_src(guiOutsideObject.rainIcon, &rain36);
+	char bufferTempLabel[10];
+	chsnprintf(bufferTempLabel, sizeof(bufferTempLabel), "%.2f", (float)((float)values->temp / 100.0f) - 100);
+    lv_label_set_text(guiOutsideObject.tempLabel, bufferTempLabel);
+
+	char bufferHumidityLabel[10];
+	chsnprintf(bufferHumidityLabel, sizeof(bufferHumidityLabel), "%d", values->humidity);
+    lv_label_set_text(guiOutsideObject.humidityLabel, bufferHumidityLabel);
+
+	char bufferPresureLabel[15];
+	chsnprintf(bufferPresureLabel, sizeof(bufferPresureLabel), "%d", values->pressure);
+    lv_label_set_text(guiOutsideObject.presureLabel, bufferPresureLabel);
+
+    lv_label_set_text(guiOutsideObject.windLabel, "0");
+
+	if(values->rain){
+		lv_img_set_src(guiOutsideObject.rainIcon, &rain36);
+	}else{
+		lv_img_set_src(guiOutsideObject.rainIcon, &no_rain36);
+	}
     lv_obj_align(guiOutsideObject.rainIcon, NULL, LV_ALIGN_IN_TOP_MID, 0, 0);
 
-    lv_label_set_text(guiOutsideObject.uvLabel, "2.65");
-    lv_label_set_text(guiOutsideObject.lightLabel, "52562");
+	char bufferUvLabel[10];
+	chsnprintf(bufferUvLabel, sizeof(bufferUvLabel), "%.2f", (float)values->uvIndex / 100.0f);
+    lv_label_set_text(guiOutsideObject.uvLabel, bufferUvLabel);
 
-    /*Set the next points on 'ser1'*/
-    for(uint16_t i = 0; i < 24 * 8; i++){
-        lv_chart_set_next(guiOutsideObject.tempChart, guiOutsideChartTempSer, i % 6 * 2);
-    }
+	char bufferLightLabel[10];
+	chsnprintf(bufferLightLabel, sizeof(bufferLightLabel), "%d", values->sunlight);
+    lv_label_set_text(guiOutsideObject.lightLabel, bufferLightLabel);
 
-
-
+    lv_chart_set_next(guiOutsideObject.tempChart, guiOutsideChartTempSer, (lv_coord_t)((values->temp / 100) - 100));
 }

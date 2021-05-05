@@ -12,8 +12,6 @@ typedef struct {
 } poolStreamObject_t;
 
 extern memory_pool_t streamMemPool;
-extern mailbox_t streamTxMail;
-extern mailbox_t streamRxMail;
 
 void shared_pools_init(void);
 

@@ -2,10 +2,14 @@
 #include "hal.h"
 #include "main.h"
 #include "guiThread.h"
+#include "pools.h"
+#include "hc12Thread.h"
+#include "msp.h"
 #include "guiMain.h"
 #include "guiHeader.h"
 #include "guiForecast.h"
 #include "guiOutside.h"
+#include "guiInside.h"
 
 #define LVGL_BUFFER_SIZE LV_HOR_RES_MAX * 10
 
@@ -18,6 +22,7 @@ static uint8_t flush_buff[LVGL_BUFFER_SIZE / 8];
 static guiMainHeaderValues_t headerValues;
 static guiForecastValues_t forecastValues;
 static guiOutsideValues_t outsideValues;
+static guiInsideValues_t insideValues;
 
 //////////////////////////////////
 bool blackTransmission = true;
@@ -28,12 +33,12 @@ static void Gui__LVGLdispFlushCb(lv_disp_drv_t *disp, const lv_area_t *area, lv_
 static void Gui__LVGLmonitorCb(struct _disp_drv_t * disp_drv, uint32_t time, uint32_t px);
 ///////////////////////////////
 
-static THD_WORKING_AREA(GUIVA, 550);
+static THD_WORKING_AREA(GUIVA, 6500);
 static THD_FUNCTION(guiThread, arg) {
 	(void) arg;
 	chRegSetThreadName("GUI");
 
-	EPD_7IN5_HD_Init(guiThreadCfg->epd7In5HdCfg);
+	chThdSleepMilliseconds(1000); // wait 10s to boot up
 
 	lv_init();
 	lv_disp_buf_init(&disp_buf_lvgl, color_buff_1, NULL, LVGL_BUFFER_SIZE);
@@ -52,28 +57,42 @@ static THD_FUNCTION(guiThread, arg) {
 	/////////////////////////////////////////////////////////////////
 	guiInit();
 
-	headerValues.voltage = 1563;
-	headerValues.voltagePercent = 40;
-
 	guiInitMainHeader("--- Stary Liskovec ---");
 	guiFillMainHeader(&headerValues);
 
-	forecastValues.dayNameStart = 2;
-	forecastValues.dayIconIndex[4] = 2;
 	guiInitForecast(lv_scr_act(), HEIGHT_HEADER, HEIGHT_FORECAST);
 	guiFillForecast(&forecastValues);
 
 	guiInitOutside(lv_scr_act(), HEIGHT_FORECAST + HEIGHT_HEADER, HEIGHT_HEADER, "--- Balkon ---");
-	guiFillOutsideAll(&outsideValues);
+	guiInitInside(lv_scr_act(), HEIGHT_FORECAST + HEIGHT_HEADER, HEIGHT_HEADER, "--- Pokoj ---", "--- Loznic ---");
+	guiFillInsideAll(&insideValues);
 
 	guiCreateBackground();
 	/////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////
 
 	while (true) {
-		lv_tick_inc(20);
+		//collect data for display
+		poolStreamObject_t* messagePoolObject = (poolStreamObject_t *) chPoolAlloc(&streamMemPool);
+		if (messagePoolObject) {
+			MSP__createMspFrame(messagePoolObject, 199, 0, NULL);
+			chMBPostTimeout(&streamTxMail, (msg_t) messagePoolObject, TIME_IMMEDIATE);
+		}
+
+		chThdSleepMilliseconds(5000);
+
+		chSysLock();
+		memcpy(&outsideValues, &mainData.outside, sizeof(mainData.outside));
+		memcpy(&forecastValues, &mainData.forecast, sizeof(mainData.forecast));
+		memcpy(&insideValues, &mainData.inside, sizeof(mainData.inside));
+		chSysUnlock();
+
+		guiFillOutsideAll(&outsideValues);
+		guiFillInsideAll(&insideValues);
+		guiFillForecast(&forecastValues);
+		lv_tick_inc(1000);
 		lv_task_handler();
-		chThdSleepMilliseconds(100);
+		chThdSleepMilliseconds(1000);
 	}
 }
 
@@ -100,6 +119,7 @@ static void Gui__LVGLdispFlushCb(lv_disp_drv_t *disp, const lv_area_t *area, lv_
 	uint32_t byteIterator = 0;
 
 	if(area->x1 == 0 && area->y1 == 0){
+		EPD_7IN5_HD_Init(guiThreadCfg->epd7In5HdCfg);
 		EPD_7IN5_HD_StartWriteToScreen();
 	}
 
@@ -121,6 +141,7 @@ static void Gui__LVGLdispFlushCb(lv_disp_drv_t *disp, const lv_area_t *area, lv_
 	if(area->x2 == LV_HOR_RES_MAX - 1 && area->y2 == LV_VER_RES_MAX - 1){
 		EPD_7IN5_HD_EndWriteToScreen();
 		EPD_7IN5_HD_Sleep();
+		blackTransmission = true;
 	}
 
 	lv_disp_flush_ready(disp);

@@ -814,23 +814,13 @@ mcuconf.h
 
 ../cfg/mcuconf.h
 
-../drivers/msp.h
-ch.h
-../drivers/ch.h
-pools.h
-../drivers/pools.h
-
-../main.h
+C:/Users/error414/Documents/STM32/meteo-F4/src/drivers/EPD_7in5_HD.c
 hal.h
-../hal.h
+C:/Users/error414/Documents/STM32/meteo-F4/src/drivers/hal.h
+EPD_7in5_HD.h
+C:/Users/error414/Documents/STM32/meteo-F4/src/drivers/EPD_7in5_HD.h
 
-../threads/pools.h
-
-C:/Users/error414/Documents/STM32/meteo-F4/src/threads/mspRxThread.c
-ch.h
-C:/Users/error414/Documents/STM32/meteo-F4/src/threads/ch.h
-main.h
-C:/Users/error414/Documents/STM32/meteo-F4/src/threads/main.h
-msp.h
-C:/Users/error414/Documents/STM32/meteo-F4/src/threads/msp.h
+C:/Users/error414/Documents/STM32/meteo-F4/src/drivers/EPD_7in5_HD.h
+hal.h
+C:/Users/error414/Documents/STM32/meteo-F4/src/drivers/hal.h
 

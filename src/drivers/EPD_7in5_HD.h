@@ -26,5 +26,6 @@ void EPD_7IN5_HD_StartWriteToScreen(void);
 void EPD_7IN5_HD_WriteToScreen(const uint8_t *data, uint32_t size);
 void EPD_7IN5_HD_EndWriteToScreen(void);
 void EPD_7IN5_HD_Sleep(void);
+void EPD_7IN5_HD_TurnOn(void);
 
 #endif

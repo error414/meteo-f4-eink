@@ -1,8 +1,10 @@
 #include <string.h>
 #include "msp.h"
+#include "main.h"e
 
 struct MSP_status_t{
-	msp_frame_t msp_frame PACKED_VAR;
+	systime_t lastRunTime;
+	msp_frame_t msp_frame;
 	uint8_t indexMSP;
 	uint8_t indexPayloadMSP;
 	uint8_t crcMSP;
@@ -17,7 +19,7 @@ void MSP__createMspFrame(poolStreamObject_t *streamObject, uint8_t cmd, uint32_t
 	uint8_t *p;
 
 	streamObject->size =  6 + (argc * 4);
-
+	cmd = HC12_HW_ID_OFFSET + cmd;
 	uint8_t crc = cmd ^ (argc * 4);
 
 	p = (uint8_t*)(streamObject->message);              p += 3;
@@ -39,6 +41,13 @@ void MSP__createMspFrame(poolStreamObject_t *streamObject, uint8_t cmd, uint32_t
  * @param c
  */
 bool MSP__parseMspFrameLoop(char c){
+	if(MSP_status.indexMSP > 0 && MSP_status.lastRunTime > 0 && chVTGetSystemTimeX() - MSP_status.lastRunTime > 100){
+		MSP_status.indexMSP = 0;
+		MSP_status.indexPayloadMSP = 0;
+		MSP_status.lastRunTime = chVTGetSystemTimeX();
+		return false;
+	}
+
 	if (MSP_status.indexMSP == 0 && c == '$') {
 		MSP_status.indexMSP++;
 	} else if (MSP_status.indexMSP == 1 && c == 'M') {
@@ -63,12 +72,12 @@ bool MSP__parseMspFrameLoop(char c){
 			}
 
 			MSP_status.crcMSP ^= c;
+			MSP_status.indexMSP = 0;
+			MSP_status.indexPayloadMSP = 0;
+
 			if (MSP_status.crcMSP == 0) {
 				return true;
 			}
-
-			MSP_status.indexMSP = 0;
-			MSP_status.indexPayloadMSP = 0;
 		}
 
 	} else {
@@ -76,6 +85,7 @@ bool MSP__parseMspFrameLoop(char c){
 		MSP_status.indexPayloadMSP = 0;
 	}
 
+	MSP_status.lastRunTime = chVTGetSystemTimeX();
 	return false;
 }
 

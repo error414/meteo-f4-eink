@@ -2368,9 +2368,22 @@ CMakeFiles/stm32-chibios.dir/cfg/hw.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/stm32-chibios.dir/cfg/hw.c.s"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\error414\Documents\STM32\meteo-F4\src\cfg\hw.c -o CMakeFiles\stm32-chibios.dir\cfg\hw.c.s
 
+CMakeFiles/stm32-chibios.dir/images/fc_clear.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
+CMakeFiles/stm32-chibios.dir/images/fc_clear.c.obj: ../images/fc_clear.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_179) "Building C object CMakeFiles/stm32-chibios.dir/images/fc_clear.c.obj"
+	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\images\fc_clear.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\images\fc_clear.c
+
+CMakeFiles/stm32-chibios.dir/images/fc_clear.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/stm32-chibios.dir/images/fc_clear.c.i"
+	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\error414\Documents\STM32\meteo-F4\src\images\fc_clear.c > CMakeFiles\stm32-chibios.dir\images\fc_clear.c.i
+
+CMakeFiles/stm32-chibios.dir/images/fc_clear.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/stm32-chibios.dir/images/fc_clear.c.s"
+	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\error414\Documents\STM32\meteo-F4\src\images\fc_clear.c -o CMakeFiles\stm32-chibios.dir\images\fc_clear.c.s
+
 CMakeFiles/stm32-chibios.dir/images/fc_cloud.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/images/fc_cloud.c.obj: ../images/fc_cloud.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_179) "Building C object CMakeFiles/stm32-chibios.dir/images/fc_cloud.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_180) "Building C object CMakeFiles/stm32-chibios.dir/images/fc_cloud.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\images\fc_cloud.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\images\fc_cloud.c
 
 CMakeFiles/stm32-chibios.dir/images/fc_cloud.c.i: cmake_force
@@ -2383,7 +2396,7 @@ CMakeFiles/stm32-chibios.dir/images/fc_cloud.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/images/fc_drizzle.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/images/fc_drizzle.c.obj: ../images/fc_drizzle.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_180) "Building C object CMakeFiles/stm32-chibios.dir/images/fc_drizzle.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_181) "Building C object CMakeFiles/stm32-chibios.dir/images/fc_drizzle.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\images\fc_drizzle.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\images\fc_drizzle.c
 
 CMakeFiles/stm32-chibios.dir/images/fc_drizzle.c.i: cmake_force
@@ -2393,19 +2406,6 @@ CMakeFiles/stm32-chibios.dir/images/fc_drizzle.c.i: cmake_force
 CMakeFiles/stm32-chibios.dir/images/fc_drizzle.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/stm32-chibios.dir/images/fc_drizzle.c.s"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\error414\Documents\STM32\meteo-F4\src\images\fc_drizzle.c -o CMakeFiles\stm32-chibios.dir\images\fc_drizzle.c.s
-
-CMakeFiles/stm32-chibios.dir/images/fc_freeze_rain.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
-CMakeFiles/stm32-chibios.dir/images/fc_freeze_rain.c.obj: ../images/fc_freeze_rain.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_181) "Building C object CMakeFiles/stm32-chibios.dir/images/fc_freeze_rain.c.obj"
-	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\images\fc_freeze_rain.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\images\fc_freeze_rain.c
-
-CMakeFiles/stm32-chibios.dir/images/fc_freeze_rain.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/stm32-chibios.dir/images/fc_freeze_rain.c.i"
-	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\error414\Documents\STM32\meteo-F4\src\images\fc_freeze_rain.c > CMakeFiles\stm32-chibios.dir\images\fc_freeze_rain.c.i
-
-CMakeFiles/stm32-chibios.dir/images/fc_freeze_rain.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/stm32-chibios.dir/images/fc_freeze_rain.c.s"
-	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\error414\Documents\STM32\meteo-F4\src\images\fc_freeze_rain.c -o CMakeFiles\stm32-chibios.dir\images\fc_freeze_rain.c.s
 
 CMakeFiles/stm32-chibios.dir/images/fc_heavy_cloud.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/images/fc_heavy_cloud.c.obj: ../images/fc_heavy_cloud.c
@@ -2485,9 +2485,22 @@ CMakeFiles/stm32-chibios.dir/images/humidity36.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/stm32-chibios.dir/images/humidity36.c.s"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\error414\Documents\STM32\meteo-F4\src\images\humidity36.c -o CMakeFiles\stm32-chibios.dir\images\humidity36.c.s
 
+CMakeFiles/stm32-chibios.dir/images/no_rain36.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
+CMakeFiles/stm32-chibios.dir/images/no_rain36.c.obj: ../images/no_rain36.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_188) "Building C object CMakeFiles/stm32-chibios.dir/images/no_rain36.c.obj"
+	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\images\no_rain36.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\images\no_rain36.c
+
+CMakeFiles/stm32-chibios.dir/images/no_rain36.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/stm32-chibios.dir/images/no_rain36.c.i"
+	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\error414\Documents\STM32\meteo-F4\src\images\no_rain36.c > CMakeFiles\stm32-chibios.dir\images\no_rain36.c.i
+
+CMakeFiles/stm32-chibios.dir/images/no_rain36.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/stm32-chibios.dir/images/no_rain36.c.s"
+	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\error414\Documents\STM32\meteo-F4\src\images\no_rain36.c -o CMakeFiles\stm32-chibios.dir\images\no_rain36.c.s
+
 CMakeFiles/stm32-chibios.dir/images/pressure36.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/images/pressure36.c.obj: ../images/pressure36.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_188) "Building C object CMakeFiles/stm32-chibios.dir/images/pressure36.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_189) "Building C object CMakeFiles/stm32-chibios.dir/images/pressure36.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\images\pressure36.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\images\pressure36.c
 
 CMakeFiles/stm32-chibios.dir/images/pressure36.c.i: cmake_force
@@ -2500,7 +2513,7 @@ CMakeFiles/stm32-chibios.dir/images/pressure36.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/images/rain36.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/images/rain36.c.obj: ../images/rain36.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_189) "Building C object CMakeFiles/stm32-chibios.dir/images/rain36.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_190) "Building C object CMakeFiles/stm32-chibios.dir/images/rain36.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\images\rain36.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\images\rain36.c
 
 CMakeFiles/stm32-chibios.dir/images/rain36.c.i: cmake_force
@@ -2513,7 +2526,7 @@ CMakeFiles/stm32-chibios.dir/images/rain36.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/images/sun36.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/images/sun36.c.obj: ../images/sun36.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_190) "Building C object CMakeFiles/stm32-chibios.dir/images/sun36.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_191) "Building C object CMakeFiles/stm32-chibios.dir/images/sun36.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\images\sun36.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\images\sun36.c
 
 CMakeFiles/stm32-chibios.dir/images/sun36.c.i: cmake_force
@@ -2526,7 +2539,7 @@ CMakeFiles/stm32-chibios.dir/images/sun36.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/images/temp.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/images/temp.c.obj: ../images/temp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_191) "Building C object CMakeFiles/stm32-chibios.dir/images/temp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_192) "Building C object CMakeFiles/stm32-chibios.dir/images/temp.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\images\temp.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\images\temp.c
 
 CMakeFiles/stm32-chibios.dir/images/temp.c.i: cmake_force
@@ -2539,7 +2552,7 @@ CMakeFiles/stm32-chibios.dir/images/temp.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/images/uv36.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/images/uv36.c.obj: ../images/uv36.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_192) "Building C object CMakeFiles/stm32-chibios.dir/images/uv36.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_193) "Building C object CMakeFiles/stm32-chibios.dir/images/uv36.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\images\uv36.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\images\uv36.c
 
 CMakeFiles/stm32-chibios.dir/images/uv36.c.i: cmake_force
@@ -2552,7 +2565,7 @@ CMakeFiles/stm32-chibios.dir/images/uv36.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/images/wind36.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/images/wind36.c.obj: ../images/wind36.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_193) "Building C object CMakeFiles/stm32-chibios.dir/images/wind36.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_194) "Building C object CMakeFiles/stm32-chibios.dir/images/wind36.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\images\wind36.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\images\wind36.c
 
 CMakeFiles/stm32-chibios.dir/images/wind36.c.i: cmake_force
@@ -2565,7 +2578,7 @@ CMakeFiles/stm32-chibios.dir/images/wind36.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/font/digital_16.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/font/digital_16.c.obj: ../font/digital_16.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_194) "Building C object CMakeFiles/stm32-chibios.dir/font/digital_16.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_195) "Building C object CMakeFiles/stm32-chibios.dir/font/digital_16.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\font\digital_16.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\font\digital_16.c
 
 CMakeFiles/stm32-chibios.dir/font/digital_16.c.i: cmake_force
@@ -2578,7 +2591,7 @@ CMakeFiles/stm32-chibios.dir/font/digital_16.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/font/digital_20.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/font/digital_20.c.obj: ../font/digital_20.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_195) "Building C object CMakeFiles/stm32-chibios.dir/font/digital_20.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_196) "Building C object CMakeFiles/stm32-chibios.dir/font/digital_20.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\font\digital_20.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\font\digital_20.c
 
 CMakeFiles/stm32-chibios.dir/font/digital_20.c.i: cmake_force
@@ -2591,7 +2604,7 @@ CMakeFiles/stm32-chibios.dir/font/digital_20.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/font/digital_48.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/font/digital_48.c.obj: ../font/digital_48.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_196) "Building C object CMakeFiles/stm32-chibios.dir/font/digital_48.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_197) "Building C object CMakeFiles/stm32-chibios.dir/font/digital_48.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\font\digital_48.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\font\digital_48.c
 
 CMakeFiles/stm32-chibios.dir/font/digital_48.c.i: cmake_force
@@ -2604,7 +2617,7 @@ CMakeFiles/stm32-chibios.dir/font/digital_48.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/font/dogica12.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/font/dogica12.c.obj: ../font/dogica12.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_197) "Building C object CMakeFiles/stm32-chibios.dir/font/dogica12.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_198) "Building C object CMakeFiles/stm32-chibios.dir/font/dogica12.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\font\dogica12.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\font\dogica12.c
 
 CMakeFiles/stm32-chibios.dir/font/dogica12.c.i: cmake_force
@@ -2617,7 +2630,7 @@ CMakeFiles/stm32-chibios.dir/font/dogica12.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/font/omega12.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/font/omega12.c.obj: ../font/omega12.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_198) "Building C object CMakeFiles/stm32-chibios.dir/font/omega12.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_199) "Building C object CMakeFiles/stm32-chibios.dir/font/omega12.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\font\omega12.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\font\omega12.c
 
 CMakeFiles/stm32-chibios.dir/font/omega12.c.i: cmake_force
@@ -2630,7 +2643,7 @@ CMakeFiles/stm32-chibios.dir/font/omega12.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/font/omega16.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/font/omega16.c.obj: ../font/omega16.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_199) "Building C object CMakeFiles/stm32-chibios.dir/font/omega16.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_200) "Building C object CMakeFiles/stm32-chibios.dir/font/omega16.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\font\omega16.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\font\omega16.c
 
 CMakeFiles/stm32-chibios.dir/font/omega16.c.i: cmake_force
@@ -2643,7 +2656,7 @@ CMakeFiles/stm32-chibios.dir/font/omega16.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/font/omega20.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/font/omega20.c.obj: ../font/omega20.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_200) "Building C object CMakeFiles/stm32-chibios.dir/font/omega20.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_201) "Building C object CMakeFiles/stm32-chibios.dir/font/omega20.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\font\omega20.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\font\omega20.c
 
 CMakeFiles/stm32-chibios.dir/font/omega20.c.i: cmake_force
@@ -2656,7 +2669,7 @@ CMakeFiles/stm32-chibios.dir/font/omega20.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/font/press12.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/font/press12.c.obj: ../font/press12.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_201) "Building C object CMakeFiles/stm32-chibios.dir/font/press12.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_202) "Building C object CMakeFiles/stm32-chibios.dir/font/press12.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\font\press12.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\font\press12.c
 
 CMakeFiles/stm32-chibios.dir/font/press12.c.i: cmake_force
@@ -2669,7 +2682,7 @@ CMakeFiles/stm32-chibios.dir/font/press12.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/font/press14.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/font/press14.c.obj: ../font/press14.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_202) "Building C object CMakeFiles/stm32-chibios.dir/font/press14.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_203) "Building C object CMakeFiles/stm32-chibios.dir/font/press14.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\font\press14.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\font\press14.c
 
 CMakeFiles/stm32-chibios.dir/font/press14.c.i: cmake_force
@@ -2682,7 +2695,7 @@ CMakeFiles/stm32-chibios.dir/font/press14.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/font/press16.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/font/press16.c.obj: ../font/press16.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_203) "Building C object CMakeFiles/stm32-chibios.dir/font/press16.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_204) "Building C object CMakeFiles/stm32-chibios.dir/font/press16.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\font\press16.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\font\press16.c
 
 CMakeFiles/stm32-chibios.dir/font/press16.c.i: cmake_force
@@ -2695,7 +2708,7 @@ CMakeFiles/stm32-chibios.dir/font/press16.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/font/retro12.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/font/retro12.c.obj: ../font/retro12.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_204) "Building C object CMakeFiles/stm32-chibios.dir/font/retro12.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_205) "Building C object CMakeFiles/stm32-chibios.dir/font/retro12.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\font\retro12.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\font\retro12.c
 
 CMakeFiles/stm32-chibios.dir/font/retro12.c.i: cmake_force
@@ -2708,7 +2721,7 @@ CMakeFiles/stm32-chibios.dir/font/retro12.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/font/retro20.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/font/retro20.c.obj: ../font/retro20.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_205) "Building C object CMakeFiles/stm32-chibios.dir/font/retro20.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_206) "Building C object CMakeFiles/stm32-chibios.dir/font/retro20.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\font\retro20.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\font\retro20.c
 
 CMakeFiles/stm32-chibios.dir/font/retro20.c.i: cmake_force
@@ -2721,7 +2734,7 @@ CMakeFiles/stm32-chibios.dir/font/retro20.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/font/upheaval16.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/font/upheaval16.c.obj: ../font/upheaval16.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_206) "Building C object CMakeFiles/stm32-chibios.dir/font/upheaval16.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_207) "Building C object CMakeFiles/stm32-chibios.dir/font/upheaval16.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\font\upheaval16.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\font\upheaval16.c
 
 CMakeFiles/stm32-chibios.dir/font/upheaval16.c.i: cmake_force
@@ -2734,7 +2747,7 @@ CMakeFiles/stm32-chibios.dir/font/upheaval16.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/font/upheaval20.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/font/upheaval20.c.obj: ../font/upheaval20.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_207) "Building C object CMakeFiles/stm32-chibios.dir/font/upheaval20.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_208) "Building C object CMakeFiles/stm32-chibios.dir/font/upheaval20.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\font\upheaval20.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\font\upheaval20.c
 
 CMakeFiles/stm32-chibios.dir/font/upheaval20.c.i: cmake_force
@@ -2747,7 +2760,7 @@ CMakeFiles/stm32-chibios.dir/font/upheaval20.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/font/upheaval30.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/font/upheaval30.c.obj: ../font/upheaval30.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_208) "Building C object CMakeFiles/stm32-chibios.dir/font/upheaval30.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_209) "Building C object CMakeFiles/stm32-chibios.dir/font/upheaval30.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\font\upheaval30.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\font\upheaval30.c
 
 CMakeFiles/stm32-chibios.dir/font/upheaval30.c.i: cmake_force
@@ -2760,7 +2773,7 @@ CMakeFiles/stm32-chibios.dir/font/upheaval30.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/font/upheaval48.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/font/upheaval48.c.obj: ../font/upheaval48.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_209) "Building C object CMakeFiles/stm32-chibios.dir/font/upheaval48.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_210) "Building C object CMakeFiles/stm32-chibios.dir/font/upheaval48.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\font\upheaval48.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\font\upheaval48.c
 
 CMakeFiles/stm32-chibios.dir/font/upheaval48.c.i: cmake_force
@@ -2773,7 +2786,7 @@ CMakeFiles/stm32-chibios.dir/font/upheaval48.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/gui/guHeader.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/gui/guHeader.c.obj: ../gui/guHeader.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_210) "Building C object CMakeFiles/stm32-chibios.dir/gui/guHeader.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_211) "Building C object CMakeFiles/stm32-chibios.dir/gui/guHeader.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\gui\guHeader.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\gui\guHeader.c
 
 CMakeFiles/stm32-chibios.dir/gui/guHeader.c.i: cmake_force
@@ -2786,7 +2799,7 @@ CMakeFiles/stm32-chibios.dir/gui/guHeader.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/gui/guiForecast.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/gui/guiForecast.c.obj: ../gui/guiForecast.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_211) "Building C object CMakeFiles/stm32-chibios.dir/gui/guiForecast.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_212) "Building C object CMakeFiles/stm32-chibios.dir/gui/guiForecast.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\gui\guiForecast.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\gui\guiForecast.c
 
 CMakeFiles/stm32-chibios.dir/gui/guiForecast.c.i: cmake_force
@@ -2797,9 +2810,22 @@ CMakeFiles/stm32-chibios.dir/gui/guiForecast.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/stm32-chibios.dir/gui/guiForecast.c.s"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\error414\Documents\STM32\meteo-F4\src\gui\guiForecast.c -o CMakeFiles\stm32-chibios.dir\gui\guiForecast.c.s
 
+CMakeFiles/stm32-chibios.dir/gui/guiInside.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
+CMakeFiles/stm32-chibios.dir/gui/guiInside.c.obj: ../gui/guiInside.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_213) "Building C object CMakeFiles/stm32-chibios.dir/gui/guiInside.c.obj"
+	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\gui\guiInside.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\gui\guiInside.c
+
+CMakeFiles/stm32-chibios.dir/gui/guiInside.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/stm32-chibios.dir/gui/guiInside.c.i"
+	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\error414\Documents\STM32\meteo-F4\src\gui\guiInside.c > CMakeFiles\stm32-chibios.dir\gui\guiInside.c.i
+
+CMakeFiles/stm32-chibios.dir/gui/guiInside.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/stm32-chibios.dir/gui/guiInside.c.s"
+	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\error414\Documents\STM32\meteo-F4\src\gui\guiInside.c -o CMakeFiles\stm32-chibios.dir\gui\guiInside.c.s
+
 CMakeFiles/stm32-chibios.dir/gui/guiMain.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/gui/guiMain.c.obj: ../gui/guiMain.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_212) "Building C object CMakeFiles/stm32-chibios.dir/gui/guiMain.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_214) "Building C object CMakeFiles/stm32-chibios.dir/gui/guiMain.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\gui\guiMain.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\gui\guiMain.c
 
 CMakeFiles/stm32-chibios.dir/gui/guiMain.c.i: cmake_force
@@ -2812,7 +2838,7 @@ CMakeFiles/stm32-chibios.dir/gui/guiMain.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/gui/guiOutside.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/gui/guiOutside.c.obj: ../gui/guiOutside.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_213) "Building C object CMakeFiles/stm32-chibios.dir/gui/guiOutside.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_215) "Building C object CMakeFiles/stm32-chibios.dir/gui/guiOutside.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\gui\guiOutside.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\gui\guiOutside.c
 
 CMakeFiles/stm32-chibios.dir/gui/guiOutside.c.i: cmake_force
@@ -2825,7 +2851,7 @@ CMakeFiles/stm32-chibios.dir/gui/guiOutside.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/drivers/EPD_7in5_HD.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/drivers/EPD_7in5_HD.c.obj: ../drivers/EPD_7in5_HD.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_214) "Building C object CMakeFiles/stm32-chibios.dir/drivers/EPD_7in5_HD.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_216) "Building C object CMakeFiles/stm32-chibios.dir/drivers/EPD_7in5_HD.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\drivers\EPD_7in5_HD.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\drivers\EPD_7in5_HD.c
 
 CMakeFiles/stm32-chibios.dir/drivers/EPD_7in5_HD.c.i: cmake_force
@@ -2836,9 +2862,22 @@ CMakeFiles/stm32-chibios.dir/drivers/EPD_7in5_HD.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/stm32-chibios.dir/drivers/EPD_7in5_HD.c.s"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\error414\Documents\STM32\meteo-F4\src\drivers\EPD_7in5_HD.c -o CMakeFiles\stm32-chibios.dir\drivers\EPD_7in5_HD.c.s
 
+CMakeFiles/stm32-chibios.dir/drivers/bmp280.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
+CMakeFiles/stm32-chibios.dir/drivers/bmp280.c.obj: ../drivers/bmp280.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_217) "Building C object CMakeFiles/stm32-chibios.dir/drivers/bmp280.c.obj"
+	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\drivers\bmp280.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\drivers\bmp280.c
+
+CMakeFiles/stm32-chibios.dir/drivers/bmp280.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/stm32-chibios.dir/drivers/bmp280.c.i"
+	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\error414\Documents\STM32\meteo-F4\src\drivers\bmp280.c > CMakeFiles\stm32-chibios.dir\drivers\bmp280.c.i
+
+CMakeFiles/stm32-chibios.dir/drivers/bmp280.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/stm32-chibios.dir/drivers/bmp280.c.s"
+	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\error414\Documents\STM32\meteo-F4\src\drivers\bmp280.c -o CMakeFiles\stm32-chibios.dir\drivers\bmp280.c.s
+
 CMakeFiles/stm32-chibios.dir/drivers/msp.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/drivers/msp.c.obj: ../drivers/msp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_215) "Building C object CMakeFiles/stm32-chibios.dir/drivers/msp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_218) "Building C object CMakeFiles/stm32-chibios.dir/drivers/msp.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\drivers\msp.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\drivers\msp.c
 
 CMakeFiles/stm32-chibios.dir/drivers/msp.c.i: cmake_force
@@ -2849,9 +2888,22 @@ CMakeFiles/stm32-chibios.dir/drivers/msp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/stm32-chibios.dir/drivers/msp.c.s"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\error414\Documents\STM32\meteo-F4\src\drivers\msp.c -o CMakeFiles\stm32-chibios.dir\drivers\msp.c.s
 
+CMakeFiles/stm32-chibios.dir/threads/bmp280Thread.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
+CMakeFiles/stm32-chibios.dir/threads/bmp280Thread.c.obj: ../threads/bmp280Thread.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_219) "Building C object CMakeFiles/stm32-chibios.dir/threads/bmp280Thread.c.obj"
+	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\threads\bmp280Thread.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\threads\bmp280Thread.c
+
+CMakeFiles/stm32-chibios.dir/threads/bmp280Thread.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/stm32-chibios.dir/threads/bmp280Thread.c.i"
+	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\error414\Documents\STM32\meteo-F4\src\threads\bmp280Thread.c > CMakeFiles\stm32-chibios.dir\threads\bmp280Thread.c.i
+
+CMakeFiles/stm32-chibios.dir/threads/bmp280Thread.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/stm32-chibios.dir/threads/bmp280Thread.c.s"
+	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\error414\Documents\STM32\meteo-F4\src\threads\bmp280Thread.c -o CMakeFiles\stm32-chibios.dir\threads\bmp280Thread.c.s
+
 CMakeFiles/stm32-chibios.dir/threads/guiThread.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/threads/guiThread.c.obj: ../threads/guiThread.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_216) "Building C object CMakeFiles/stm32-chibios.dir/threads/guiThread.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_220) "Building C object CMakeFiles/stm32-chibios.dir/threads/guiThread.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\threads\guiThread.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\threads\guiThread.c
 
 CMakeFiles/stm32-chibios.dir/threads/guiThread.c.i: cmake_force
@@ -2864,7 +2916,7 @@ CMakeFiles/stm32-chibios.dir/threads/guiThread.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/threads/hc12Thread.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/threads/hc12Thread.c.obj: ../threads/hc12Thread.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_217) "Building C object CMakeFiles/stm32-chibios.dir/threads/hc12Thread.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_221) "Building C object CMakeFiles/stm32-chibios.dir/threads/hc12Thread.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\threads\hc12Thread.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\threads\hc12Thread.c
 
 CMakeFiles/stm32-chibios.dir/threads/hc12Thread.c.i: cmake_force
@@ -2875,9 +2927,22 @@ CMakeFiles/stm32-chibios.dir/threads/hc12Thread.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/stm32-chibios.dir/threads/hc12Thread.c.s"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\error414\Documents\STM32\meteo-F4\src\threads\hc12Thread.c -o CMakeFiles\stm32-chibios.dir\threads\hc12Thread.c.s
 
+CMakeFiles/stm32-chibios.dir/threads/hwListThread.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
+CMakeFiles/stm32-chibios.dir/threads/hwListThread.c.obj: ../threads/hwListThread.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_222) "Building C object CMakeFiles/stm32-chibios.dir/threads/hwListThread.c.obj"
+	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\threads\hwListThread.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\threads\hwListThread.c
+
+CMakeFiles/stm32-chibios.dir/threads/hwListThread.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/stm32-chibios.dir/threads/hwListThread.c.i"
+	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\error414\Documents\STM32\meteo-F4\src\threads\hwListThread.c > CMakeFiles\stm32-chibios.dir\threads\hwListThread.c.i
+
+CMakeFiles/stm32-chibios.dir/threads/hwListThread.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/stm32-chibios.dir/threads/hwListThread.c.s"
+	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\error414\Documents\STM32\meteo-F4\src\threads\hwListThread.c -o CMakeFiles\stm32-chibios.dir\threads\hwListThread.c.s
+
 CMakeFiles/stm32-chibios.dir/threads/mspRxThread.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/threads/mspRxThread.c.obj: ../threads/mspRxThread.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_218) "Building C object CMakeFiles/stm32-chibios.dir/threads/mspRxThread.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_223) "Building C object CMakeFiles/stm32-chibios.dir/threads/mspRxThread.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\threads\mspRxThread.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\threads\mspRxThread.c
 
 CMakeFiles/stm32-chibios.dir/threads/mspRxThread.c.i: cmake_force
@@ -2890,7 +2955,7 @@ CMakeFiles/stm32-chibios.dir/threads/mspRxThread.c.s: cmake_force
 
 CMakeFiles/stm32-chibios.dir/threads/pools.c.obj: CMakeFiles/stm32-chibios.dir/flags.make
 CMakeFiles/stm32-chibios.dir/threads/pools.c.obj: ../threads/pools.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_219) "Building C object CMakeFiles/stm32-chibios.dir/threads/pools.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_224) "Building C object CMakeFiles/stm32-chibios.dir/threads/pools.c.obj"
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\stm32-chibios.dir\threads\pools.c.obj -c C:\Users\error414\Documents\STM32\meteo-F4\src\threads\pools.c
 
 CMakeFiles/stm32-chibios.dir/threads/pools.c.i: cmake_force
@@ -3081,15 +3146,16 @@ stm32__chibios_OBJECTS = \
 "CMakeFiles/stm32-chibios.dir/shell/shellCmd.c.obj" \
 "CMakeFiles/stm32-chibios.dir/cfg/board.c.obj" \
 "CMakeFiles/stm32-chibios.dir/cfg/hw.c.obj" \
+"CMakeFiles/stm32-chibios.dir/images/fc_clear.c.obj" \
 "CMakeFiles/stm32-chibios.dir/images/fc_cloud.c.obj" \
 "CMakeFiles/stm32-chibios.dir/images/fc_drizzle.c.obj" \
-"CMakeFiles/stm32-chibios.dir/images/fc_freeze_rain.c.obj" \
 "CMakeFiles/stm32-chibios.dir/images/fc_heavy_cloud.c.obj" \
 "CMakeFiles/stm32-chibios.dir/images/fc_part_clound.c.obj" \
 "CMakeFiles/stm32-chibios.dir/images/fc_rain.c.obj" \
 "CMakeFiles/stm32-chibios.dir/images/fc_snow.c.obj" \
 "CMakeFiles/stm32-chibios.dir/images/fc_thunderstorm.c.obj" \
 "CMakeFiles/stm32-chibios.dir/images/humidity36.c.obj" \
+"CMakeFiles/stm32-chibios.dir/images/no_rain36.c.obj" \
 "CMakeFiles/stm32-chibios.dir/images/pressure36.c.obj" \
 "CMakeFiles/stm32-chibios.dir/images/rain36.c.obj" \
 "CMakeFiles/stm32-chibios.dir/images/sun36.c.obj" \
@@ -3114,12 +3180,16 @@ stm32__chibios_OBJECTS = \
 "CMakeFiles/stm32-chibios.dir/font/upheaval48.c.obj" \
 "CMakeFiles/stm32-chibios.dir/gui/guHeader.c.obj" \
 "CMakeFiles/stm32-chibios.dir/gui/guiForecast.c.obj" \
+"CMakeFiles/stm32-chibios.dir/gui/guiInside.c.obj" \
 "CMakeFiles/stm32-chibios.dir/gui/guiMain.c.obj" \
 "CMakeFiles/stm32-chibios.dir/gui/guiOutside.c.obj" \
 "CMakeFiles/stm32-chibios.dir/drivers/EPD_7in5_HD.c.obj" \
+"CMakeFiles/stm32-chibios.dir/drivers/bmp280.c.obj" \
 "CMakeFiles/stm32-chibios.dir/drivers/msp.c.obj" \
+"CMakeFiles/stm32-chibios.dir/threads/bmp280Thread.c.obj" \
 "CMakeFiles/stm32-chibios.dir/threads/guiThread.c.obj" \
 "CMakeFiles/stm32-chibios.dir/threads/hc12Thread.c.obj" \
+"CMakeFiles/stm32-chibios.dir/threads/hwListThread.c.obj" \
 "CMakeFiles/stm32-chibios.dir/threads/mspRxThread.c.obj" \
 "CMakeFiles/stm32-chibios.dir/threads/pools.c.obj"
 
@@ -3304,15 +3374,16 @@ stm32-chibios: CMakeFiles/stm32-chibios.dir/shell/shell.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/shell/shellCmd.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/cfg/board.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/cfg/hw.c.obj
+stm32-chibios: CMakeFiles/stm32-chibios.dir/images/fc_clear.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/images/fc_cloud.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/images/fc_drizzle.c.obj
-stm32-chibios: CMakeFiles/stm32-chibios.dir/images/fc_freeze_rain.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/images/fc_heavy_cloud.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/images/fc_part_clound.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/images/fc_rain.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/images/fc_snow.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/images/fc_thunderstorm.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/images/humidity36.c.obj
+stm32-chibios: CMakeFiles/stm32-chibios.dir/images/no_rain36.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/images/pressure36.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/images/rain36.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/images/sun36.c.obj
@@ -3337,18 +3408,22 @@ stm32-chibios: CMakeFiles/stm32-chibios.dir/font/upheaval30.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/font/upheaval48.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/gui/guHeader.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/gui/guiForecast.c.obj
+stm32-chibios: CMakeFiles/stm32-chibios.dir/gui/guiInside.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/gui/guiMain.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/gui/guiOutside.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/drivers/EPD_7in5_HD.c.obj
+stm32-chibios: CMakeFiles/stm32-chibios.dir/drivers/bmp280.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/drivers/msp.c.obj
+stm32-chibios: CMakeFiles/stm32-chibios.dir/threads/bmp280Thread.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/threads/guiThread.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/threads/hc12Thread.c.obj
+stm32-chibios: CMakeFiles/stm32-chibios.dir/threads/hwListThread.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/threads/mspRxThread.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/threads/pools.c.obj
 stm32-chibios: CMakeFiles/stm32-chibios.dir/build.make
 stm32-chibios: CMakeFiles/stm32-chibios.dir/objects1.rsp
 stm32-chibios: CMakeFiles/stm32-chibios.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_220) "Linking C executable stm32-chibios"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\error414\Documents\STM32\meteo-F4\src\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_225) "Linking C executable stm32-chibios"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\stm32-chibios.dir\link.txt --verbose=$(VERBOSE)
 	C:\Users\error414\Documents\STM32-tools\gcc-arm-none-eabi-10-2020-q4-major\bin\arm-none-eabi-size.exe stm32-chibios
 

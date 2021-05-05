@@ -121,7 +121,7 @@
  * @brief   Enables the PWM subsystem.
  */
 #if !defined(HAL_USE_PWM) || defined(__DOXYGEN__)
-#define HAL_USE_PWM                         TRUE
+#define HAL_USE_PWM                         FALSE
 #endif
 
 /**
@@ -412,7 +412,7 @@
  *          buffers.
  */
 #if !defined(SERIAL_BUFFERS_SIZE) || defined(__DOXYGEN__)
-#define SERIAL_BUFFERS_SIZE                 16
+#define SERIAL_BUFFERS_SIZE                 255
 #endif
 
 /*===========================================================================*/

@@ -5,6 +5,8 @@
 #include "hal.h"
 #include "shell.h"
 #include "chprintf.h"
+#include "hc12Thread.h"
+#include "hwListThread.h"
 
 #if (SHELL_CMD_THREADS_ENABLED == TRUE) || defined(__DOXYGEN__)
 static void cmd_threads(BaseSequentialStream *chp, int argc, char *argv[]) {
@@ -80,9 +82,9 @@ static void cmd_mem(BaseSequentialStream *chp, int argc, char *argv[]) {
 static void cmd_hc12Set(BaseSequentialStream *chp, int argc, char *argv[]){
 	(void)argv;
 
-	/*if(!HC12__thread_reconfigureDefault(chp)){
+	if(!HC12__thread_reconfigureDefault(chp)){
 		chprintf(chp, "ERROR");
-	}*/
+	}
 }
 
 /**
@@ -91,7 +93,7 @@ static void cmd_hc12Set(BaseSequentialStream *chp, int argc, char *argv[]){
  * @param argc
  * @param argv
  */
-static void cmd_send(BaseSequentialStream *chp, int argc, char *argv[]){
+static void cmd_request_data(BaseSequentialStream *chp, int argc, char *argv[]){
 	/*if (argc == 1) {
 		poolStreamObject_t* messagePoolObject = (poolStreamObject_t *) chPoolAlloc(&streamMemPool);
 		if (messagePoolObject) {
@@ -108,6 +110,67 @@ static void cmd_send(BaseSequentialStream *chp, int argc, char *argv[]){
 	shellUsage(chp, "param missing");
 }
 
+/**
+ *
+ * @param chp
+ * @param argc
+ * @param argv
+ */
+static void cmd_values(BaseSequentialStream *chp, int argc, char *argv[]){
+	(void)argv;
+	hw_t** hwList = HwList__getHw();
+	for(uint8_t i = 0; i < HW_LIST_SIZE; i++){
+		if(hwList[i] && hwList[i]->type == VALUE_TYPE_SENSOR){
+			for(uint8_t ii = 0; ii < HW_LIST_VALUES_SIZE; ii++){
+				if(hwList[i]->values[ii].name != NULL){
+
+					if(hwList[i]->values[ii].formatter == VALUE_FORMATTER_BOOL){
+						chprintf(chp, "%15s: %3s  " SHELL_NEWLINE_STR,
+						         hwList[i]->values[ii].name,
+						         hwList[i]->values[ii].value ? "ON" : "OFF"
+						);
+					}else{
+
+						float value = (float)hwList[i]->values[ii].value;
+						if(hwList[i]->values[ii].formatter == VALUE_FORMATTER_100){
+							value /= 100;
+						}
+						chprintf(chp, "%15s: %.2f  " SHELL_NEWLINE_STR,
+						         hwList[i]->values[ii].name,
+						         value
+						);
+					}
+
+				}
+			}
+		}
+	}
+}
+
+/**
+ *
+ * @param chp
+ * @param argc
+ * @param argv
+ */
+static void cmd_hw(BaseSequentialStream *chp, int argc, char *argv[]){
+	(void)argv;
+	static const char *states[] = {HW_STATUS_LIST};
+	static const char *type[] = {HW_TYPE_LIST};
+
+	hw_t** hwList = HwList__getHw();
+	for(uint8_t i = 0; i < HW_LIST_SIZE; i++){
+		if(hwList[i]){
+			chprintf(chp, "%6u  %11s  %10s  %10s" SHELL_NEWLINE_STR,
+			         hwList[i]->id,
+			         type[hwList[i]->type],
+			         hwList[i]->name,
+			         states[hwList[i]->status]
+			);
+		}
+	}
+}
+
 
 
 /*===========================================================================*/
@@ -122,8 +185,9 @@ const ShellCommand shellCommands[] = {
 #if SHELL_CMD_THREADS_ENABLED == TRUE
 		{"threads", cmd_threads},
 #endif
+  {"values", cmd_values},
+  {"hw", cmd_hw},
   {"hc12set", cmd_hc12Set},
-  {"send", cmd_send},
   {"mem", cmd_mem},
   {NULL, NULL}
 };

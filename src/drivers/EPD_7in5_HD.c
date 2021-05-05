@@ -190,3 +190,13 @@ void EPD_7IN5_HD_Sleep(void)
 	EPD_7IN5_HD_SendCommand(0x10);
 	EPD_7IN5_HD_SendDataByte(0x01);
 }
+
+/**
+ *
+ */
+void EPD_7IN5_HD_TurnOn(void){
+	EPD_7IN5_HD_SendCommand(0x22);
+	EPD_7IN5_HD_SendDataByte(0xC7);
+	EPD_7IN5_HD_SendCommand(0x20);
+	EPD_7IN5_HD_WaitUntilIdle();
+}

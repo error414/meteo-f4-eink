@@ -63,6 +63,8 @@ typedef struct {
 	binary_semaphore_t uart_bsem;
 } hc12State_t;
 
+extern mailbox_t streamTxMail;
+
 void HC12__thread_init(const hc12ThreadCfg_t *_threadCfg, hc12cfg_t *_hc12Cfg);
 void HC12__thread_start(void);
 bool HC12__thread_reconfigure(hc12cfg_t *cfg, BaseSequentialStream *outStream);

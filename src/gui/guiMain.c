@@ -9,14 +9,9 @@ static lv_point_t lineTopPoints4[] = { {LV_HOR_RES_MAX / 2 - 2 , HEIGHT_FORECAST
 static lv_point_t lineTopPoints5[] = { {LV_HOR_RES_MAX / 2 + 2 , HEIGHT_FORECAST + HEIGHT_HEADER}, {LV_HOR_RES_MAX / 2 + 2 , LV_VER_RES_MAX} };
 
 lv_style_t styleFontText12;
-lv_style_t styleFontText14;
-lv_style_t styleFontText16;
-lv_style_t styleFontText20;
 lv_style_t styleFont16;
 lv_style_t styleFont20;
 lv_style_t styleFont30;
-lv_style_t styleFont38;
-lv_style_t styleFont42;
 lv_style_t styleFont48;
 lv_style_t styleLine;
 lv_style_t styleChart;
@@ -26,28 +21,19 @@ lv_style_t noBorder;
 void guiInit(void){
 
     lv_style_init(&styleFontText12);
-    lv_style_set_text_font(&styleFontText12, LV_STATE_DEFAULT, &retro12);
+	lv_style_set_text_font(&styleFontText12, LV_STATE_DEFAULT, &retro12);
 
-    lv_style_init(&styleFontText14);
-    lv_style_set_text_font(&styleFontText14, LV_STATE_DEFAULT, &press14);
+	lv_style_init(&styleFont16);
+	lv_style_set_text_font(&styleFont16, LV_STATE_DEFAULT, &upheaval16);
 
-    lv_style_init(&styleFontText16);
-    lv_style_set_text_font(&styleFontText16, LV_STATE_DEFAULT, &press16);
+	lv_style_init(&styleFont20);
+	lv_style_set_text_font(&styleFont20, LV_STATE_DEFAULT, &upheaval20);
 
-    lv_style_init(&styleFontText20);
-    lv_style_set_text_font(&styleFontText20, LV_STATE_DEFAULT, &retro20);
+	lv_style_init(&styleFont30);
+	lv_style_set_text_font(&styleFont30, LV_STATE_DEFAULT, &upheaval30);
 
-    lv_style_init(&styleFont16);
-    lv_style_set_text_font(&styleFont16, LV_STATE_DEFAULT, &upheaval16);
-
-    lv_style_init(&styleFont20);
-    lv_style_set_text_font(&styleFont20, LV_STATE_DEFAULT, &upheaval20);
-
-    lv_style_init(&styleFont30);
-    lv_style_set_text_font(&styleFont30, LV_STATE_DEFAULT, &upheaval30);
-
-    lv_style_init(&styleFont48);
-    lv_style_set_text_font(&styleFont48, LV_STATE_DEFAULT, &upheaval48);
+	lv_style_init(&styleFont48);
+	lv_style_set_text_font(&styleFont48, LV_STATE_DEFAULT, &upheaval48);
 
     lv_style_init(&styleLine);
     lv_style_set_line_width(&styleLine, LV_STATE_DEFAULT, 1);

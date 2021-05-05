@@ -14,8 +14,9 @@ LV_IMG_DECLARE(fc_part_clound);
 LV_IMG_DECLARE(fc_rain);
 LV_IMG_DECLARE(fc_thunderstorm);
 LV_IMG_DECLARE(fc_drizzle);
+LV_IMG_DECLARE(fc_clear);
 
-#define FC_CLEAR_1              &fc_cloud
+#define FC_CLEAR_1              &fc_clear
 #define FC_CLOUND_A_2           &fc_part_clound
 #define FC_CLOUND_A_3           &fc_part_clound
 #define FC_CLOUND_A_4           &fc_cloud
@@ -30,7 +31,7 @@ typedef struct {
     uint8_t     dayIconIndex[FORECAST_DAYS];
     uint16_t    dayTemp[FORECAST_DAYS];
     uint8_t     dayNameStart;
-} guiForecastValues_t;
+} __packed guiForecastValues_t;
 
 void guiInitForecast(lv_obj_t *parent, uint16_t posY, uint16_t height);
 void guiFillForecast(guiForecastValues_t* values);

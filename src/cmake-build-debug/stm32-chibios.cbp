@@ -1078,6 +1078,12 @@
 		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/drivers/EPD_7in5_HD.h">
 			<Option target="stm32-chibios"/>
 		</Unit>
+		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/drivers/bmp280.c">
+			<Option target="stm32-chibios"/>
+		</Unit>
+		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/drivers/bmp280.h">
+			<Option target="stm32-chibios"/>
+		</Unit>
 		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/drivers/msp.c">
 			<Option target="stm32-chibios"/>
 		</Unit>
@@ -1141,6 +1147,12 @@
 		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/gui/guiForecast.h">
 			<Option target="stm32-chibios"/>
 		</Unit>
+		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/gui/guiInside.c">
+			<Option target="stm32-chibios"/>
+		</Unit>
+		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/gui/guiInside.h">
+			<Option target="stm32-chibios"/>
+		</Unit>
 		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/gui/guiMain.c">
 			<Option target="stm32-chibios"/>
 		</Unit>
@@ -1153,13 +1165,13 @@
 		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/gui/guiOutside.h">
 			<Option target="stm32-chibios"/>
 		</Unit>
+		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/images/fc_clear.c">
+			<Option target="stm32-chibios"/>
+		</Unit>
 		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/images/fc_cloud.c">
 			<Option target="stm32-chibios"/>
 		</Unit>
 		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/images/fc_drizzle.c">
-			<Option target="stm32-chibios"/>
-		</Unit>
-		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/images/fc_freeze_rain.c">
 			<Option target="stm32-chibios"/>
 		</Unit>
 		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/images/fc_heavy_cloud.c">
@@ -1178,6 +1190,9 @@
 			<Option target="stm32-chibios"/>
 		</Unit>
 		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/images/humidity36.c">
+			<Option target="stm32-chibios"/>
+		</Unit>
+		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/images/no_rain36.c">
 			<Option target="stm32-chibios"/>
 		</Unit>
 		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/images/pressure36.c">
@@ -1216,6 +1231,12 @@
 		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/shell/shellCmd.h">
 			<Option target="stm32-chibios"/>
 		</Unit>
+		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/threads/bmp280Thread.c">
+			<Option target="stm32-chibios"/>
+		</Unit>
+		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/threads/bmp280Thread.h">
+			<Option target="stm32-chibios"/>
+		</Unit>
 		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/threads/guiThread.c">
 			<Option target="stm32-chibios"/>
 		</Unit>
@@ -1226,6 +1247,12 @@
 			<Option target="stm32-chibios"/>
 		</Unit>
 		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/threads/hc12Thread.h">
+			<Option target="stm32-chibios"/>
+		</Unit>
+		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/threads/hwListThread.c">
+			<Option target="stm32-chibios"/>
+		</Unit>
+		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/threads/hwListThread.h">
 			<Option target="stm32-chibios"/>
 		</Unit>
 		<Unit filename="C:/Users/error414/Documents/STM32/meteo-F4/src/threads/mspRxThread.c">

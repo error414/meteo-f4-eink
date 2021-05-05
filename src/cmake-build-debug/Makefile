@@ -4881,6 +4881,33 @@ drivers/EPD_7in5_HD.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/drivers/EPD_7in5_HD.c.s
 .PHONY : drivers/EPD_7in5_HD.c.s
 
+drivers/bmp280.obj: drivers/bmp280.c.obj
+
+.PHONY : drivers/bmp280.obj
+
+# target to build an object file
+drivers/bmp280.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/drivers/bmp280.c.obj
+.PHONY : drivers/bmp280.c.obj
+
+drivers/bmp280.i: drivers/bmp280.c.i
+
+.PHONY : drivers/bmp280.i
+
+# target to preprocess a source file
+drivers/bmp280.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/drivers/bmp280.c.i
+.PHONY : drivers/bmp280.c.i
+
+drivers/bmp280.s: drivers/bmp280.c.s
+
+.PHONY : drivers/bmp280.s
+
+# target to generate assembly for a file
+drivers/bmp280.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/drivers/bmp280.c.s
+.PHONY : drivers/bmp280.c.s
+
 drivers/msp.obj: drivers/msp.c.obj
 
 .PHONY : drivers/msp.obj
@@ -5394,6 +5421,33 @@ gui/guiForecast.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/gui/guiForecast.c.s
 .PHONY : gui/guiForecast.c.s
 
+gui/guiInside.obj: gui/guiInside.c.obj
+
+.PHONY : gui/guiInside.obj
+
+# target to build an object file
+gui/guiInside.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/gui/guiInside.c.obj
+.PHONY : gui/guiInside.c.obj
+
+gui/guiInside.i: gui/guiInside.c.i
+
+.PHONY : gui/guiInside.i
+
+# target to preprocess a source file
+gui/guiInside.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/gui/guiInside.c.i
+.PHONY : gui/guiInside.c.i
+
+gui/guiInside.s: gui/guiInside.c.s
+
+.PHONY : gui/guiInside.s
+
+# target to generate assembly for a file
+gui/guiInside.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/gui/guiInside.c.s
+.PHONY : gui/guiInside.c.s
+
 gui/guiMain.obj: gui/guiMain.c.obj
 
 .PHONY : gui/guiMain.obj
@@ -5448,6 +5502,33 @@ gui/guiOutside.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/gui/guiOutside.c.s
 .PHONY : gui/guiOutside.c.s
 
+images/fc_clear.obj: images/fc_clear.c.obj
+
+.PHONY : images/fc_clear.obj
+
+# target to build an object file
+images/fc_clear.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/images/fc_clear.c.obj
+.PHONY : images/fc_clear.c.obj
+
+images/fc_clear.i: images/fc_clear.c.i
+
+.PHONY : images/fc_clear.i
+
+# target to preprocess a source file
+images/fc_clear.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/images/fc_clear.c.i
+.PHONY : images/fc_clear.c.i
+
+images/fc_clear.s: images/fc_clear.c.s
+
+.PHONY : images/fc_clear.s
+
+# target to generate assembly for a file
+images/fc_clear.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/images/fc_clear.c.s
+.PHONY : images/fc_clear.c.s
+
 images/fc_cloud.obj: images/fc_cloud.c.obj
 
 .PHONY : images/fc_cloud.obj
@@ -5501,33 +5582,6 @@ images/fc_drizzle.s: images/fc_drizzle.c.s
 images/fc_drizzle.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/images/fc_drizzle.c.s
 .PHONY : images/fc_drizzle.c.s
-
-images/fc_freeze_rain.obj: images/fc_freeze_rain.c.obj
-
-.PHONY : images/fc_freeze_rain.obj
-
-# target to build an object file
-images/fc_freeze_rain.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/images/fc_freeze_rain.c.obj
-.PHONY : images/fc_freeze_rain.c.obj
-
-images/fc_freeze_rain.i: images/fc_freeze_rain.c.i
-
-.PHONY : images/fc_freeze_rain.i
-
-# target to preprocess a source file
-images/fc_freeze_rain.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/images/fc_freeze_rain.c.i
-.PHONY : images/fc_freeze_rain.c.i
-
-images/fc_freeze_rain.s: images/fc_freeze_rain.c.s
-
-.PHONY : images/fc_freeze_rain.s
-
-# target to generate assembly for a file
-images/fc_freeze_rain.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/images/fc_freeze_rain.c.s
-.PHONY : images/fc_freeze_rain.c.s
 
 images/fc_heavy_cloud.obj: images/fc_heavy_cloud.c.obj
 
@@ -5690,6 +5744,33 @@ images/humidity36.s: images/humidity36.c.s
 images/humidity36.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/images/humidity36.c.s
 .PHONY : images/humidity36.c.s
+
+images/no_rain36.obj: images/no_rain36.c.obj
+
+.PHONY : images/no_rain36.obj
+
+# target to build an object file
+images/no_rain36.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/images/no_rain36.c.obj
+.PHONY : images/no_rain36.c.obj
+
+images/no_rain36.i: images/no_rain36.c.i
+
+.PHONY : images/no_rain36.i
+
+# target to preprocess a source file
+images/no_rain36.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/images/no_rain36.c.i
+.PHONY : images/no_rain36.c.i
+
+images/no_rain36.s: images/no_rain36.c.s
+
+.PHONY : images/no_rain36.s
+
+# target to generate assembly for a file
+images/no_rain36.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/images/no_rain36.c.s
+.PHONY : images/no_rain36.c.s
 
 images/pressure36.obj: images/pressure36.c.obj
 
@@ -5934,6 +6015,33 @@ shell/shellCmd.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/shell/shellCmd.c.s
 .PHONY : shell/shellCmd.c.s
 
+threads/bmp280Thread.obj: threads/bmp280Thread.c.obj
+
+.PHONY : threads/bmp280Thread.obj
+
+# target to build an object file
+threads/bmp280Thread.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/threads/bmp280Thread.c.obj
+.PHONY : threads/bmp280Thread.c.obj
+
+threads/bmp280Thread.i: threads/bmp280Thread.c.i
+
+.PHONY : threads/bmp280Thread.i
+
+# target to preprocess a source file
+threads/bmp280Thread.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/threads/bmp280Thread.c.i
+.PHONY : threads/bmp280Thread.c.i
+
+threads/bmp280Thread.s: threads/bmp280Thread.c.s
+
+.PHONY : threads/bmp280Thread.s
+
+# target to generate assembly for a file
+threads/bmp280Thread.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/threads/bmp280Thread.c.s
+.PHONY : threads/bmp280Thread.c.s
+
 threads/guiThread.obj: threads/guiThread.c.obj
 
 .PHONY : threads/guiThread.obj
@@ -5987,6 +6095,33 @@ threads/hc12Thread.s: threads/hc12Thread.c.s
 threads/hc12Thread.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/threads/hc12Thread.c.s
 .PHONY : threads/hc12Thread.c.s
+
+threads/hwListThread.obj: threads/hwListThread.c.obj
+
+.PHONY : threads/hwListThread.obj
+
+# target to build an object file
+threads/hwListThread.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/threads/hwListThread.c.obj
+.PHONY : threads/hwListThread.c.obj
+
+threads/hwListThread.i: threads/hwListThread.c.i
+
+.PHONY : threads/hwListThread.i
+
+# target to preprocess a source file
+threads/hwListThread.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/threads/hwListThread.c.i
+.PHONY : threads/hwListThread.c.i
+
+threads/hwListThread.s: threads/hwListThread.c.s
+
+.PHONY : threads/hwListThread.s
+
+# target to generate assembly for a file
+threads/hwListThread.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stm32-chibios.dir\build.make CMakeFiles/stm32-chibios.dir/threads/hwListThread.c.s
+.PHONY : threads/hwListThread.c.s
 
 threads/mspRxThread.obj: threads/mspRxThread.c.obj
 
@@ -6576,6 +6711,9 @@ help:
 	@echo ... drivers/EPD_7in5_HD.obj
 	@echo ... drivers/EPD_7in5_HD.i
 	@echo ... drivers/EPD_7in5_HD.s
+	@echo ... drivers/bmp280.obj
+	@echo ... drivers/bmp280.i
+	@echo ... drivers/bmp280.s
 	@echo ... drivers/msp.obj
 	@echo ... drivers/msp.i
 	@echo ... drivers/msp.s
@@ -6633,21 +6771,24 @@ help:
 	@echo ... gui/guiForecast.obj
 	@echo ... gui/guiForecast.i
 	@echo ... gui/guiForecast.s
+	@echo ... gui/guiInside.obj
+	@echo ... gui/guiInside.i
+	@echo ... gui/guiInside.s
 	@echo ... gui/guiMain.obj
 	@echo ... gui/guiMain.i
 	@echo ... gui/guiMain.s
 	@echo ... gui/guiOutside.obj
 	@echo ... gui/guiOutside.i
 	@echo ... gui/guiOutside.s
+	@echo ... images/fc_clear.obj
+	@echo ... images/fc_clear.i
+	@echo ... images/fc_clear.s
 	@echo ... images/fc_cloud.obj
 	@echo ... images/fc_cloud.i
 	@echo ... images/fc_cloud.s
 	@echo ... images/fc_drizzle.obj
 	@echo ... images/fc_drizzle.i
 	@echo ... images/fc_drizzle.s
-	@echo ... images/fc_freeze_rain.obj
-	@echo ... images/fc_freeze_rain.i
-	@echo ... images/fc_freeze_rain.s
 	@echo ... images/fc_heavy_cloud.obj
 	@echo ... images/fc_heavy_cloud.i
 	@echo ... images/fc_heavy_cloud.s
@@ -6666,6 +6807,9 @@ help:
 	@echo ... images/humidity36.obj
 	@echo ... images/humidity36.i
 	@echo ... images/humidity36.s
+	@echo ... images/no_rain36.obj
+	@echo ... images/no_rain36.i
+	@echo ... images/no_rain36.s
 	@echo ... images/pressure36.obj
 	@echo ... images/pressure36.i
 	@echo ... images/pressure36.s
@@ -6693,12 +6837,18 @@ help:
 	@echo ... shell/shellCmd.obj
 	@echo ... shell/shellCmd.i
 	@echo ... shell/shellCmd.s
+	@echo ... threads/bmp280Thread.obj
+	@echo ... threads/bmp280Thread.i
+	@echo ... threads/bmp280Thread.s
 	@echo ... threads/guiThread.obj
 	@echo ... threads/guiThread.i
 	@echo ... threads/guiThread.s
 	@echo ... threads/hc12Thread.obj
 	@echo ... threads/hc12Thread.i
 	@echo ... threads/hc12Thread.s
+	@echo ... threads/hwListThread.obj
+	@echo ... threads/hwListThread.i
+	@echo ... threads/hwListThread.s
 	@echo ... threads/mspRxThread.obj
 	@echo ... threads/mspRxThread.i
 	@echo ... threads/mspRxThread.s

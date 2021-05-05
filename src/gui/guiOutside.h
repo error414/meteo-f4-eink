@@ -13,7 +13,6 @@ typedef struct {
     uint8_t uvIndex;
     uint8_t  voltagePercent;
     bool rain; //lux
-
 } guiOutsideValues_t;
 
 void guiInitOutside(lv_obj_t *parent, uint16_t posY, uint16_t height, const char *name);
