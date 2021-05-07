@@ -228,7 +228,7 @@ void guiFillOutsideAll(guiOutsideValues_t* values){
     lv_label_set_text(guiOutsideObject.battLabel, bufferBattLabel);
 
 	char bufferTempLabel[10];
-	chsnprintf(bufferTempLabel, sizeof(bufferTempLabel), "%.2f", (float)((float)values->temp / 100.0f) - 100);
+	chsnprintf(bufferTempLabel, sizeof(bufferTempLabel), "%.1f", (float)((float)values->temp / 100.0f) - 100);
     lv_label_set_text(guiOutsideObject.tempLabel, bufferTempLabel);
 
 	char bufferHumidityLabel[10];

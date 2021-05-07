@@ -75,7 +75,7 @@ static THD_FUNCTION(guiThread, arg) {
 		//collect data for display
 		poolStreamObject_t* messagePoolObject = (poolStreamObject_t *) chPoolAlloc(&streamMemPool);
 		if (messagePoolObject) {
-			MSP__createMspFrame(messagePoolObject, 199, 0, NULL);
+			MSP__createMspFrame(messagePoolObject, 179, 0, NULL);
 			chMBPostTimeout(&streamTxMail, (msg_t) messagePoolObject, TIME_IMMEDIATE);
 		}
 

@@ -1,7 +1,7 @@
 #ifndef POOLS_H
 #define POOLS_H
 
-#define STREAM_POOL_SIZE 20
+#define STREAM_POOL_SIZE 5
 #define STREAM_BUFFER_SIZE 64
 #define STREAM_MESSAGE_SIZE 255
 
