@@ -2,11 +2,11 @@
 #include "guiMain.h"
 
 
-static lv_point_t lineTopPoints1[] = { {0, HEIGHT_HEADER}, {LV_HOR_RES_MAX, HEIGHT_HEADER} };
-static lv_point_t lineTopPoints2[] = { {0, HEIGHT_FORECAST + HEIGHT_HEADER}, {LV_HOR_RES_MAX, HEIGHT_FORECAST + HEIGHT_HEADER} };
-static lv_point_t lineTopPoints3[] = { {0, HEIGHT_FORECAST + HEIGHT_HEADER + HEIGHT_SENSOR_HEADER}, {LV_HOR_RES_MAX, HEIGHT_FORECAST + HEIGHT_HEADER + HEIGHT_SENSOR_HEADER} };
-static lv_point_t lineTopPoints4[] = { {LV_HOR_RES_MAX / 2 - 2 , HEIGHT_FORECAST + HEIGHT_HEADER}, {LV_HOR_RES_MAX / 2 - 2 , LV_VER_RES_MAX} };
-static lv_point_t lineTopPoints5[] = { {LV_HOR_RES_MAX / 2 + 2 , HEIGHT_FORECAST + HEIGHT_HEADER}, {LV_HOR_RES_MAX / 2 + 2 , LV_VER_RES_MAX} };
+static const lv_point_t lineTopPoints1[] = { {0, HEIGHT_HEADER}, {LV_HOR_RES_MAX, HEIGHT_HEADER} };
+static const lv_point_t lineTopPoints2[] = { {0, HEIGHT_FORECAST + HEIGHT_HEADER}, {LV_HOR_RES_MAX, HEIGHT_FORECAST + HEIGHT_HEADER} };
+static const lv_point_t lineTopPoints3[] = { {0, HEIGHT_FORECAST + HEIGHT_HEADER + HEIGHT_SENSOR_HEADER}, {LV_HOR_RES_MAX, HEIGHT_FORECAST + HEIGHT_HEADER + HEIGHT_SENSOR_HEADER} };
+static const lv_point_t lineTopPoints4[] = { {LV_HOR_RES_MAX / 2 - 2 , HEIGHT_FORECAST + HEIGHT_HEADER}, {LV_HOR_RES_MAX / 2 - 2 , LV_VER_RES_MAX} };
+static const lv_point_t lineTopPoints5[] = { {LV_HOR_RES_MAX / 2 + 2 , HEIGHT_FORECAST + HEIGHT_HEADER}, {LV_HOR_RES_MAX / 2 + 2 , LV_VER_RES_MAX} };
 
 lv_style_t styleFontText12;
 lv_style_t styleFont16;

@@ -1,6 +1,0 @@
-C:/Users/error414/Documents/STM32/meteo-F4/src/cmake-build-debug/CMakeFiles/stm32-chibios.dump.dir
-C:/Users/error414/Documents/STM32/meteo-F4/src/cmake-build-debug/CMakeFiles/stm32-chibios.dir
-C:/Users/error414/Documents/STM32/meteo-F4/src/cmake-build-debug/CMakeFiles/stm32-chibios.hex.dir
-C:/Users/error414/Documents/STM32/meteo-F4/src/cmake-build-debug/CMakeFiles/stm32-chibios.bin.dir
-C:/Users/error414/Documents/STM32/meteo-F4/src/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/error414/Documents/STM32/meteo-F4/src/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -7,6 +7,7 @@
 #include "chprintf.h"
 #include "hc12Thread.h"
 #include "hwListThread.h"
+#include "intervalThread.h_"
 
 #if (SHELL_CMD_THREADS_ENABLED == TRUE) || defined(__DOXYGEN__)
 static void cmd_threads(BaseSequentialStream *chp, int argc, char *argv[]) {
@@ -171,6 +172,37 @@ static void cmd_hw(BaseSequentialStream *chp, int argc, char *argv[]){
 	}
 }
 
+/**
+ *
+ * @param chp
+ * @param argc
+ * @param argv
+ */
+#ifdef ALLOW_GO_TO_SLEEP
+static void noSleep(BaseSequentialStream *chp, int argc, char *argv[]){
+	(void)argv;
+	msg_t  msg = chBSemWaitTimeout(&sleepSem, 500);
+	if (msg == MSG_TIMEOUT) {
+		chprintf(chp, "ERROR" SHELL_NEWLINE_STR);
+	}else {
+		chprintf(chp, "Sleep deactivated" SHELL_NEWLINE_STR);
+	}
+}
+
+/**
+ *
+ * @param chp
+ * @param argc
+ * @param argv
+ */
+static void allowSleep(BaseSequentialStream *chp, int argc, char *argv[]){
+	(void)argv;
+	chBSemSignal(&sleepSem);
+	chprintf(chp, "Sleep allowed" SHELL_NEWLINE_STR);
+	chThdSleepMilliseconds(1000);
+}
+#endif
+
 
 
 /*===========================================================================*/
@@ -189,6 +221,10 @@ const ShellCommand shellCommands[] = {
   {"hw", cmd_hw},
   {"hc12set", cmd_hc12Set},
   {"mem", cmd_mem},
+#ifdef ALLOW_GO_TO_SLEEP
+  {"noSleep", noSleep},
+  {"allowSleep", allowSleep},
+#endif
   {NULL, NULL}
 };
 

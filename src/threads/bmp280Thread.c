@@ -46,8 +46,6 @@ static THD_FUNCTION(Bmp280Thread, arg) {
 	///////////////////////////////////////////////////////////////
 
 	while (true) {
-		checkI2CCondition(bmp280ThreadCfg->driver);
-
 		if(bmp280HW.status == HW_STATUS_ERROR){
 			BMP280_init(&BMP280_dev, &BMP280_dev.params); // try reconfigure
 		}
@@ -80,6 +78,7 @@ static THD_FUNCTION(Bmp280Thread, arg) {
 void Bmp280__thread_init(const Bmp280__threadConfig_t *cfg) {
 	BMP280_dev.i2c = cfg->driver;
 	BMP280_dev.addr = BMP280_I2C_ADDRESS_0;
+    BMP280_dev.checkI2cFunc = cfg->checkI2cFunc;
 
 	BMP280_init_default_params(&BMP280_dev.params);
 	bmp280ThreadCfg = cfg;

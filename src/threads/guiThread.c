@@ -10,6 +10,8 @@
 #include "guiForecast.h"
 #include "guiOutside.h"
 #include "guiInside.h"
+#include "intervalThread.h_"
+#include "appCfg.h"
 
 #define LVGL_BUFFER_SIZE LV_HOR_RES_MAX * 10
 
@@ -33,7 +35,7 @@ static void Gui__LVGLdispFlushCb(lv_disp_drv_t *disp, const lv_area_t *area, lv_
 static void Gui__LVGLmonitorCb(struct _disp_drv_t * disp_drv, uint32_t time, uint32_t px);
 ///////////////////////////////
 
-static THD_WORKING_AREA(GUIVA, 6500);
+static THD_WORKING_AREA(GUIVA, 9000);
 static THD_FUNCTION(guiThread, arg) {
 	(void) arg;
 	chRegSetThreadName("GUI");
@@ -75,11 +77,11 @@ static THD_FUNCTION(guiThread, arg) {
 		//collect data for display
 		poolStreamObject_t* messagePoolObject = (poolStreamObject_t *) chPoolAlloc(&streamMemPool);
 		if (messagePoolObject) {
-			MSP__createMspFrame(messagePoolObject, 179, 0, NULL);
+			MSP__createMspFrame(messagePoolObject, 199, 0, NULL);
 			chMBPostTimeout(&streamTxMail, (msg_t) messagePoolObject, TIME_IMMEDIATE);
 		}
 
-		chThdSleepMilliseconds(5000);
+		chThdSleepSeconds(APP_TIMING_WAIT_FOR_DATA_TIMEOUT);
 
 		chSysLock();
 		memcpy(&outsideValues, &mainData.outside, sizeof(mainData.outside));
@@ -92,7 +94,6 @@ static THD_FUNCTION(guiThread, arg) {
 		guiFillForecast(&forecastValues);
 		lv_tick_inc(1000);
 		lv_task_handler();
-		chThdSleepMilliseconds(1000);
 	}
 }
 
@@ -142,6 +143,9 @@ static void Gui__LVGLdispFlushCb(lv_disp_drv_t *disp, const lv_area_t *area, lv_
 		EPD_7IN5_HD_EndWriteToScreen();
 		EPD_7IN5_HD_Sleep();
 		blackTransmission = true;
+
+		//chEvtBroadcast(&guiDone_event_source);
+		chThdSleepMilliseconds(500);
 	}
 
 	lv_disp_flush_ready(disp);

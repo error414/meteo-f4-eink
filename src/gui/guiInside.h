@@ -4,12 +4,12 @@
 #include "lvgl.h"
 
 typedef struct {
-    uint16_t tempBedroom; // x/100 - 100
-    uint16_t tempRoom; // x/100 - 100
-    uint16_t humidityBedroom;
-    uint16_t humidityRoom;
-    uint16_t pressureBedroom;
-    uint16_t pressureRoom;
+    uint32_t tempBedroom; // x/100 - 100
+    uint32_t tempRoom; // x/100 - 100
+    uint32_t humidityBedroom;
+    uint32_t humidityRoom;
+    uint32_t pressureBedroom;
+    uint32_t pressureRoom;
 
 } guiInsideValues_t;
 

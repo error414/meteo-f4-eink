@@ -20,6 +20,12 @@ static struct guiInsideObject_t{
 
 lv_chart_series_t * guiInsideChartTempSer;
 
+static lv_point_t lineTopPoints1[] = { {0, HEIGHT_HEADER}, {LV_HOR_RES_MAX, HEIGHT_HEADER} };
+static lv_point_t lineTopPoints2[] = { {0, HEIGHT_FORECAST + HEIGHT_HEADER}, {LV_HOR_RES_MAX, HEIGHT_FORECAST + HEIGHT_HEADER} };
+static lv_point_t lineTopPoints3[] = { {0, HEIGHT_FORECAST + HEIGHT_HEADER + HEIGHT_SENSOR_HEADER}, {LV_HOR_RES_MAX, HEIGHT_FORECAST + HEIGHT_HEADER + HEIGHT_SENSOR_HEADER} };
+static lv_point_t lineTopPoints4[] = { {LV_HOR_RES_MAX / 2 - 2 , HEIGHT_FORECAST + HEIGHT_HEADER}, {LV_HOR_RES_MAX / 2 - 2 , LV_VER_RES_MAX} };
+static lv_point_t lineTopPoints5[] = { {LV_HOR_RES_MAX / 2 + 2 , HEIGHT_FORECAST + HEIGHT_HEADER}, {LV_HOR_RES_MAX / 2 + 2 , LV_VER_RES_MAX} };
+
 /**
  *
  * @param parent
@@ -183,20 +189,17 @@ void guiInitInside(lv_obj_t *parent, uint16_t posY, uint16_t height, const char 
 	lv_obj_align(guiInsideObject.tempChart, NULL, LV_ALIGN_CENTER, 0, 0);
 	lv_chart_set_type(guiInsideObject.tempChart, LV_CHART_TYPE_LINE );   /*Show lines and points too*/
 
-	lv_chart_set_range(guiInsideObject.tempChart, -20, 40);
+	lv_chart_set_range(guiInsideObject.tempChart, 10, 35);
 	lv_chart_set_point_count(guiInsideObject.tempChart, 24 * 6); // 24hours * 10 min
-	lv_chart_set_div_line_count(guiInsideObject.tempChart, 7, 0);
+	lv_chart_set_div_line_count(guiInsideObject.tempChart, 6, 0);
 
 
-	lv_chart_set_y_tick_texts(guiInsideObject.tempChart, "-20\n-10\n0\n10\n20\n30\n40", 7, LV_CHART_AXIS_DRAW_LAST_TICK | LV_CHART_AXIS_INVERSE_LABELS_ORDER);
+	lv_chart_set_y_tick_texts(guiInsideObject.tempChart, "10\n15\n20\n25\n30\n35", 6, LV_CHART_AXIS_DRAW_LAST_TICK | LV_CHART_AXIS_INVERSE_LABELS_ORDER);
 	lv_chart_set_y_tick_length(guiInsideObject.tempChart, 4, 0);
 	lv_obj_set_style_local_text_color(guiInsideObject.tempChart, LV_OBJ_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_BLACK);
 	lv_obj_set_style_local_text_font(guiInsideObject.tempChart, LV_OBJ_PART_MAIN, LV_STATE_DEFAULT, &lv_font_montserrat_12);
 	lv_obj_set_style_local_pad_bottom(guiInsideObject.tempChart, LV_OBJ_PART_MAIN, LV_STATE_DEFAULT, 10);
 	lv_obj_set_style_local_pad_left(guiInsideObject.tempChart, LV_OBJ_PART_MAIN, LV_STATE_DEFAULT, 50);
-
-	/*Add two data series*/
-	guiInsideChartTempSer = lv_chart_add_series(guiInsideObject.tempChart, LV_COLOR_BLACK);
 }
 
 /**
@@ -206,7 +209,7 @@ void guiInitInside(lv_obj_t *parent, uint16_t posY, uint16_t height, const char 
 void guiFillInsideAll(guiInsideValues_t* values){
     ///////////////////////////////////////////////////////////////////////////////
 	char bufferTempBedroomLabel[10];
-	chsnprintf(bufferTempBedroomLabel, sizeof(bufferTempBedroomLabel), "%.1f", (float)((float)values->tempBedroom / 100.0f) - 100);
+	chsnprintf(bufferTempBedroomLabel, sizeof(bufferTempBedroomLabel), "xxxx%.1f", (float)((float)values->tempBedroom / 100.0f) - 100);
 	lv_label_set_text(guiInsideObject.tempBedroomLabel, bufferTempBedroomLabel);
 
 	char bufferTempRoomLabel[10];

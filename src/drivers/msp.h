@@ -13,7 +13,7 @@ typedef struct {
 } msp_frame_t;
 
 void MSP__createMspFrame(poolStreamObject_t *streamObject, uint8_t cmd, uint32_t argc, const uint32_t *argv);
-bool MSP__parseMspFrameLoop(char c);
+bool MSP__parseMspFrameLoop(const char c);
 void MSP__getFrameI(msp_frame_t *frame);
 
 #endif

@@ -2,12 +2,12 @@
 #include "ch.h"
 #include "hal.h"
 #include "main.h"
-#include "msp.h"
 #include "pools.h"
 #include "hc12Thread.h"
-#include "mspRxThread.h"
+#include "mspRx.h"
 #include "chprintf.h"
 #include "hwListThread.h"
+#include "msp.h"
 
 static hc12State_t hc12State;
 static hw_t hc12HW;
@@ -16,41 +16,31 @@ msg_t streamTxDataLetter[STREAM_POOL_SIZE];
 MAILBOX_DECL(streamTxMail, &streamTxDataLetter, STREAM_POOL_SIZE);
 
 void HC12__thread_checkStatus(void);
-bool HC12__thread_wakeUp();
 
 void HC12__thread_progMode();
 void HC12__thread_normalMode();
 
 static THD_WORKING_AREA(hc12StreamRXMSPVA, 256);
+static char c;
 static THD_FUNCTION(hc12StreamRXMSPThread, arg) {
 	(void) arg;
 	chRegSetThreadName("hc12RxMWPStream");
+	msp_frame_t frame;
 
 	while (true) {
-		if(chBSemWaitTimeout(&hc12State.uart_bsem, 1000) != MSG_OK){
+		if(chBSemWaitTimeout(&hc12State.uart_bsem_rx, 1000) != MSG_OK){
 			continue;
 		}
 
-		poolStreamObject_t* messageRxPoolObject = (poolStreamObject_t *) chPoolAlloc(&streamMemPool);
-		if (messageRxPoolObject) {
-			uint32_t charReceived = 0;
-			while (true) {
-				volatile char c;
-				if (sdReadTimeout((SerialDriver*)hc12State.threadCfg->sc_channel, (uint8_t *)&c, 1, 500) == 0){
-					if(charReceived > 0){
-						messageRxPoolObject->size = charReceived;
-						chMBPostTimeout(&streamRxMSPMail, (msg_t) messageRxPoolObject, TIME_IMMEDIATE);
-					}else{
-						chPoolFree(&streamMemPool, messageRxPoolObject);
-					}
-					break;
-				}
-				messageRxPoolObject->message[charReceived] = c;
-				charReceived++;
+		if (streamRead((SerialDriver*)hc12State.threadCfg->sc_channel, (uint8_t *)&c, 1) != 0){
+			if(MSP__parseMspFrameLoop(c)){
+				MSP__getFrameI(&frame);
+				processFrameI(&frame);
 			}
 		}
 
-		chBSemSignal(&hc12State.uart_bsem);
+		chBSemSignal(&hc12State.uart_bsem_rx);
+		chThdSleepMilliseconds(100);
 	}
 }
 
@@ -72,7 +62,7 @@ static THD_FUNCTION(hc12StreamTXThread, arg) {
 
 	HC12__thread_normalMode();
 
-	chBSemWait(&hc12State.uart_bsem);
+	chBSemWait(&hc12State.uart_bsem_tx);
 	while(true){
 		HC12__thread_checkStatus();
 		if(hc12State.status == HC12_STATUS_OK){
@@ -83,7 +73,7 @@ static THD_FUNCTION(hc12StreamTXThread, arg) {
 		}
 		chThdSleepMilliseconds(1000);
 	}
-	chBSemSignal(&hc12State.uart_bsem);
+	chBSemSignal(&hc12State.uart_bsem_tx);
 
 	while(chnReadTimeout(hc12State.threadCfg->sc_channel, (uint8_t *)&hc12State.rxBuff, 1, TIME_IMMEDIATE)){};
 	chThdCreateStatic(hc12StreamRXMSPVA, sizeof(hc12StreamRXMSPVA), THREAD_PRIORITY_HC12, hc12StreamRXMSPThread, NULL);
@@ -91,21 +81,22 @@ static THD_FUNCTION(hc12StreamTXThread, arg) {
 	poolStreamObject_t *pbuf;
 	msg_t msg;
 	while (true) {
-		if(chBSemWaitTimeout(&hc12State.uart_bsem, 1000) != MSG_OK){
+		if(chBSemWaitTimeout(&hc12State.uart_bsem_tx, 1000) != MSG_OK){
 			continue;
 		}
 
 		msg = chMBFetchTimeout(&streamTxMail, (msg_t *) &pbuf, TIME_IMMEDIATE);
 		if (msg == MSG_OK) {
-			chnWriteTimeout(hc12State.threadCfg->sc_channel, (uint8_t *)&pbuf->message, pbuf->size, 5000);
+		    chnWriteTimeout(hc12State.threadCfg->sc_channel, (uint8_t *)&pbuf->message, pbuf->size, OSAL_MS2I(5000));
 			pbuf->message[0] = 0x0a; //end of line
 			pbuf->message[1] = 0x0d; //end of line
-			chnWriteTimeout(hc12State.threadCfg->sc_channel, (uint8_t *)&pbuf->message, 2, 5000);
+			chnWriteTimeout(hc12State.threadCfg->sc_channel, (uint8_t *)&pbuf->message, 2, OSAL_MS2I(5000));
 			chThdSleepMilliseconds(50);
 			chPoolFree(&streamMemPool, pbuf);
 		}
+		chThdSleepMilliseconds(50);
 
-		chBSemSignal(&hc12State.uart_bsem);
+		chBSemSignal(&hc12State.uart_bsem_tx);
 	}
 }
 
@@ -120,7 +111,8 @@ void HC12__thread_init(const hc12ThreadCfg_t *_threadCfg, hc12cfg_t *_hc12Cfg) {
 	hc12State.threadCfg = _threadCfg;
 	hc12State.hc12Cfg   = _hc12Cfg;
 
-	chBSemObjectInit(&hc12State.uart_bsem, false);
+	chBSemObjectInit(&hc12State.uart_bsem_rx, false);
+	chBSemObjectInit(&hc12State.uart_bsem_tx, false);
 }
 
 /**
@@ -162,16 +154,20 @@ bool HC12__thread_reconfigureDefault(BaseSequentialStream *outStream){
  *
  */
 bool HC12__thread_reconfigure(hc12cfg_t *cfg, BaseSequentialStream *outStream) {
-	if(hc12State.status == HC12_STATUS_SLEEP){
-		HC12__thread_wakeUp();
-	}
-
 	if(hc12State.status != HC12_STATUS_OK){
+	    chprintf(outStream, "HC12 not OK");
 		return false;
 	}
 
-	if(chBSemWaitTimeout(&hc12State.uart_bsem, 1000) != MSG_OK){
+	if(chBSemWaitTimeout(&hc12State.uart_bsem_rx, OSAL_MS2I(1000)) != MSG_OK){
+	    chprintf(outStream, "HC12 not lock RX");
 		return false;
+	}
+
+	if(chBSemWaitTimeout(&hc12State.uart_bsem_tx, OSAL_MS2I(1000)) != MSG_OK){
+	    chBSemSignal(&hc12State.uart_bsem_rx);
+	    chprintf(outStream, "HC12 not lock TX");
+	    return false;
 	}
 
 	HC12__thread_progMode();
@@ -189,7 +185,8 @@ bool HC12__thread_reconfigure(hc12cfg_t *cfg, BaseSequentialStream *outStream) {
 	while(true){
 		if(chVTGetSystemTime() - timeout > 1000){
 			HC12__thread_normalMode();
-			chBSemSignal(&hc12State.uart_bsem);
+			chBSemSignal(&hc12State.uart_bsem_rx);
+			chBSemSignal(&hc12State.uart_bsem_tx);
 			return false;
 		}
 
@@ -216,7 +213,8 @@ bool HC12__thread_reconfigure(hc12cfg_t *cfg, BaseSequentialStream *outStream) {
 	while(true){
 		if(chVTGetSystemTime() - timeout > 1000){
 			HC12__thread_normalMode();
-			chBSemSignal(&hc12State.uart_bsem);
+			chBSemSignal(&hc12State.uart_bsem_rx);
+			chBSemSignal(&hc12State.uart_bsem_tx);
 			return false;
 		}
 
@@ -243,7 +241,8 @@ bool HC12__thread_reconfigure(hc12cfg_t *cfg, BaseSequentialStream *outStream) {
 	while(true){
 		if(chVTGetSystemTime() - timeout > 1000){
 			HC12__thread_normalMode();
-			chBSemSignal(&hc12State.uart_bsem);
+			chBSemSignal(&hc12State.uart_bsem_rx);
+			chBSemSignal(&hc12State.uart_bsem_tx);
 			return false;
 		}
 
@@ -271,7 +270,8 @@ bool HC12__thread_reconfigure(hc12cfg_t *cfg, BaseSequentialStream *outStream) {
 	while(true){
 		if(chVTGetSystemTime() - timeout > 1000){
 			HC12__thread_normalMode();
-			chBSemSignal(&hc12State.uart_bsem);
+			chBSemSignal(&hc12State.uart_bsem_rx);
+			chBSemSignal(&hc12State.uart_bsem_tx);
 			return false;
 		}
 
@@ -289,27 +289,9 @@ bool HC12__thread_reconfigure(hc12cfg_t *cfg, BaseSequentialStream *outStream) {
 
 	hc12State.hc12Cfg = cfg;
 	HC12__thread_normalMode();
-	chBSemSignal(&hc12State.uart_bsem);
+	chBSemSignal(&hc12State.uart_bsem_rx);
+	chBSemSignal(&hc12State.uart_bsem_tx);
 
-	return true;
-}
-
-/**
- *
- *
- * @return
- */
-bool HC12__thread_wakeUp(){
-	if(hc12State.status != HC12_STATUS_SLEEP){
-		return false;
-	}
-
-	HC12__thread_progMode();
-	HC12__thread_normalMode();
-
-	hc12State.status = HC12_STATUS_OK;
-	chBSemSignal(&hc12State.uart_bsem);
-	chThdSleepMilliseconds(HC12_WAIT_AFTER_SLEEP_TIMEOUT);
 	return true;
 }
 

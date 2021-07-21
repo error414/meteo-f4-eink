@@ -10,40 +10,36 @@
 //THREADS PRIORITY
 #define THREAD_PRIORITY_GUI         NORMALPRIO
 #define THREAD_PRIORITY_HC12        NORMALPRIO
-#define THREAD_PRIORITY_MSPPARSER   NORMALPRIO
+#define THREAD_PRIORITY_ADCPOWER    NORMALPRIO + 10
 #define THREAD_PRIORITY_BMP280      NORMALPRIO
 #define THREAD_PRIORITY_REGISTER_HW NORMALPRIO
-
-#define HC12_HW_ID_OFFSET 20
-#define HC12_HW_ID 0
-#define BMP280_HW_ID 1
-
+#define THREAD_PRIORITY_INTERVAL    NORMALPRIO + 50
 
 typedef struct {
-	uint8_t     dayIconIndex[FORECAST_DAYS];
-	uint16_t    dayTemp[FORECAST_DAYS];
-	uint8_t     dayNameStart;
+	uint8_t     dayIconIndex[FORECAST_DAYS]; // 7
+	uint16_t    dayTemp[FORECAST_DAYS]; // 7 * 2
+	uint8_t     dayNameStart; // 1
 } __packed dataForecast_t;
 
 typedef struct {
 	uint32_t sunlight;
-	uint16_t voltage;
-	uint16_t temp;
-	uint16_t humidity;
-	uint16_t pressure;
-	uint16_t wind;
-	uint8_t uvIndex;
-	uint8_t  voltagePercent;
+    uint32_t voltage;
+    uint32_t temp;
+    uint32_t humidity;
+    uint32_t pressure;
+    uint32_t wind;
+    uint32_t uvIndex;
+    uint32_t voltagePercent;
 	bool rain;
 } dataOutside_t;
 
 typedef struct {
-	uint16_t tempBedroom; // x/100 - 100
-	uint16_t tempRoom; // x/100 - 100
-	uint16_t humidityBedroom;
-	uint16_t humidityRoom;
-	uint16_t pressureBedroom;
-	uint16_t pressureRoom;
+    uint32_t tempBedroom; // x/100 - 100
+    uint32_t tempRoom; // x/100 - 100
+    uint32_t humidityBedroom;
+    uint32_t humidityRoom;
+    uint32_t pressureBedroom;
+    uint32_t pressureRoom;
 } dataInside_t;
 
 
@@ -54,7 +50,5 @@ typedef struct {
 } mainData_t;
 
 extern mainData_t mainData;
-
-void checkI2CCondition(I2CDriver *driver);
 
 #endif

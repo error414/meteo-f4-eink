@@ -52,30 +52,34 @@ void guiFillForecast(guiForecastValues_t* values){
         lv_label_set_text(guiForecastObject.temp[i], buffer);
 
         switch(values->dayIconIndex[i]){
-        	case 1:
-		        lv_img_set_src(guiForecastObject.fcIcon[i], FC_CLEAR_1);
-		        break;
-	        case 2:
-		        lv_img_set_src(guiForecastObject.fcIcon[i], FC_CLOUND_A_2);
-		        break;
-	        case 3:
-		        lv_img_set_src(guiForecastObject.fcIcon[i], FC_CLOUND_A_3);
-		        break;
-	        case 4:
-		        lv_img_set_src(guiForecastObject.fcIcon[i], FC_CLOUND_A_4);
-		        break;
-	        case 11:
-		        lv_img_set_src(guiForecastObject.fcIcon[i], FC_THUNDERSTORM_11);
-		        break;
-	        case 9:
-		        lv_img_set_src(guiForecastObject.fcIcon[i], FC_DRIZZLE_9);
-		        break;
-	        case 10:
-		        lv_img_set_src(guiForecastObject.fcIcon[i], FC_RAIN_10);
-		        break;
-	        case 13:
-		        lv_img_set_src(guiForecastObject.fcIcon[i], FC_SNOW_13);
-		        break;
-        }
+            case 80: // sunny
+            case 95:
+            case 98:
+                lv_img_set_src(guiForecastObject.fcIcon[i], FC_CLEAR_1);
+                break;
+            case 81:
+                lv_img_set_src(guiForecastObject.fcIcon[i], FC_CLOUND_A_2);
+                break;
+            case 84:
+            case 71:
+                lv_img_set_src(guiForecastObject.fcIcon[i], FC_CLOUND_A_4);
+                break;
+            case 21:
+                case 20:
+                lv_img_set_src(guiForecastObject.fcIcon[i], FC_THUNDERSTORM_11);
+                break;
+            case 9:
+                lv_img_set_src(guiForecastObject.fcIcon[i], FC_DRIZZLE_9);
+                break;
+            case 96:
+            case 54:
+            case 30:
+                lv_img_set_src(guiForecastObject.fcIcon[i], FC_RAIN_10);
+                break;
+            case 60:
+            case 51:
+                lv_img_set_src(guiForecastObject.fcIcon[i], FC_SNOW_13);
+                break;
+            }
     }
 }

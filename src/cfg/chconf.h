@@ -662,7 +662,7 @@
  * @details User fields added to the end of the @p ch_system_t structure.
  */
 #define CH_CFG_SYSTEM_EXTRA_FIELDS                                          \
-  /* Add system custom fields here.*/
+/* Add system custom fields here.*/
 
 /**
  * @brief   System initialization hook.
@@ -670,7 +670,7 @@
  *          just before interrupts are enabled globally.
  */
 #define CH_CFG_SYSTEM_INIT_HOOK() {                                         \
-  /* Add system initialization code here.*/                                 \
+/* Add system initialization code here.*/                                 \
 }
 
 /**
@@ -678,7 +678,7 @@
  * @details User fields added to the end of the @p os_instance_t structure.
  */
 #define CH_CFG_OS_INSTANCE_EXTRA_FIELDS                                     \
-  /* Add OS instance custom fields here.*/
+/* Add OS instance custom fields here.*/
 
 /**
  * @brief   OS instance initialization hook.
@@ -686,7 +686,7 @@
  * @param[in] oip       pointer to the @p os_instance_t structure
  */
 #define CH_CFG_OS_INSTANCE_INIT_HOOK(oip) {                                 \
-  /* Add OS instance initialization code here.*/                            \
+/* Add OS instance initialization code here.*/                            \
 }
 
 /**
@@ -694,7 +694,7 @@
  * @details User fields added to the end of the @p thread_t structure.
  */
 #define CH_CFG_THREAD_EXTRA_FIELDS                                          \
-  /* Add threads custom fields here.*/
+/* Add threads custom fields here.*/
 
 /**
  * @brief   Threads initialization hook.
@@ -706,7 +706,7 @@
  * @param[in] tp        pointer to the @p thread_t structure
  */
 #define CH_CFG_THREAD_INIT_HOOK(tp) {                                       \
-  /* Add threads initialization code here.*/                                \
+/* Add threads initialization code here.*/                                \
 }
 
 /**
@@ -716,7 +716,7 @@
  * @param[in] tp        pointer to the @p thread_t structure
  */
 #define CH_CFG_THREAD_EXIT_HOOK(tp) {                                       \
-  /* Add threads finalization code here.*/                                  \
+/* Add threads finalization code here.*/                                  \
 }
 
 /**
@@ -727,21 +727,21 @@
  * @param[in] otp       thread being switched out
  */
 #define CH_CFG_CONTEXT_SWITCH_HOOK(ntp, otp) {                              \
-  /* Context switch code here.*/                                            \
+/* Context switch code here.*/                                            \
 }
 
 /**
  * @brief   ISR enter hook.
  */
 #define CH_CFG_IRQ_PROLOGUE_HOOK() {                                        \
-  /* IRQ prologue code here.*/                                              \
+/* IRQ prologue code here.*/                                              \
 }
 
 /**
  * @brief   ISR exit hook.
  */
 #define CH_CFG_IRQ_EPILOGUE_HOOK() {                                        \
-  /* IRQ epilogue code here.*/                                              \
+/* IRQ epilogue code here.*/                                              \
 }
 
 /**
@@ -751,7 +751,7 @@
  * @note    This macro can be used to activate a power saving mode.
  */
 #define CH_CFG_IDLE_ENTER_HOOK() {                                          \
-  /* Idle-enter code here.*/                                                \
+/* Idle-enter code here.*/                                                \
 }
 
 /**
@@ -761,7 +761,7 @@
  * @note    This macro can be used to deactivate a power saving mode.
  */
 #define CH_CFG_IDLE_LEAVE_HOOK() {                                          \
-  /* Idle-leave code here.*/                                                \
+/* Idle-leave code here.*/                                                \
 }
 
 /**
@@ -769,7 +769,7 @@
  * @details This hook is continuously invoked by the idle thread loop.
  */
 #define CH_CFG_IDLE_LOOP_HOOK() {                                           \
-  /* Idle loop code here.*/                                                 \
+/* Idle loop code here.*/                                                 \
 }
 
 /**
@@ -778,7 +778,7 @@
  *          after processing the virtual timers queue.
  */
 #define CH_CFG_SYSTEM_TICK_HOOK() {                                         \
-  /* System tick event code here.*/                                         \
+/* System tick event code here.*/                                         \
 }
 
 /**
@@ -787,7 +787,7 @@
  *          the system is halted.
  */
 #define CH_CFG_SYSTEM_HALT_HOOK(reason) {                                   \
-  /* System halt code here.*/                                               \
+/* System halt code here.*/                                               \
 }
 
 /**
@@ -796,7 +796,15 @@
  *          trace buffer.
  */
 #define CH_CFG_TRACE_HOOK(tep) {                                            \
-  /* Trace code here.*/                                                     \
+/* Trace code here.*/                                                     \
+}
+
+/**
+ * @brief   Runtime Faults Collection Unit hook.
+ * @details This hook is invoked each time new faults are collected and stored.
+ */
+#define CH_CFG_RUNTIME_FAULTS_HOOK(mask) {                                  \
+/* Faults handling code here.*/                                           \
 }
 
 /** @} */

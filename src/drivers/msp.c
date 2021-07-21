@@ -1,6 +1,7 @@
 #include <string.h>
 #include "msp.h"
 #include "main.h"
+#include "appCfg.h"
 
 struct MSP_status_t{
 	systime_t lastRunTime;
@@ -19,7 +20,12 @@ void MSP__createMspFrame(poolStreamObject_t *streamObject, uint8_t cmd, uint32_t
 	uint8_t *p;
 
 	streamObject->size =  6 + (argc * 4);
-	cmd = HC12_HW_ID_OFFSET + cmd;
+	if(argc > 0){
+		cmd = HC12_HW_ID_OFFSET + cmd;
+	}else{
+		cmd = cmd;
+	}
+
 	uint8_t crc = cmd ^ (argc * 4);
 
 	p = (uint8_t*)(streamObject->message);              p += 3;
@@ -40,13 +46,16 @@ void MSP__createMspFrame(poolStreamObject_t *streamObject, uint8_t cmd, uint32_t
  *
  * @param c
  */
-bool MSP__parseMspFrameLoop(char c){
-	if(MSP_status.indexMSP > 0 && MSP_status.lastRunTime > 0 && chVTGetSystemTimeX() - MSP_status.lastRunTime > 100){
+bool MSP__parseMspFrameLoop(const char c){
+
+    volatile systime_t ccc;
+    ccc = chVTGetSystemTimeX();
+    /*if(MSP_status.indexMSP > 0 && MSP_status.lastRunTime > 0 && ccc - MSP_status.lastRunTime > 10000){
 		MSP_status.indexMSP = 0;
 		MSP_status.indexPayloadMSP = 0;
 		MSP_status.lastRunTime = chVTGetSystemTimeX();
 		return false;
-	}
+	}*/
 
 	if (MSP_status.indexMSP == 0 && c == '$') {
 		MSP_status.indexMSP++;

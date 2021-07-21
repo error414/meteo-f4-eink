@@ -1,6 +1,9 @@
 #ifndef HW_LIST_THREAD_H
 #define HW_LIST_THREAD_H
 
+#include "ch.h"
+#include "hal.h"
+
 #define  HW_LIST_SIZE           10
 #define  HW_LIST_VALUES_SIZE    6
 

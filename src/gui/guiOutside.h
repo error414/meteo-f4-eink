@@ -5,13 +5,13 @@
 
 typedef struct {
     uint32_t sunlight; //lux
-    uint16_t voltage;
-    uint16_t temp; // x/100
-    uint16_t humidity;
-    uint16_t pressure;
-    uint16_t wind; // x/100
-    uint8_t uvIndex;
-    uint8_t  voltagePercent;
+    uint32_t voltage;
+    uint32_t temp; // x/100
+    uint32_t humidity;
+    uint32_t pressure;
+    uint32_t wind; // x/100
+    uint32_t uvIndex;
+    uint32_t  voltagePercent;
     bool rain; //lux
 } guiOutsideValues_t;
 

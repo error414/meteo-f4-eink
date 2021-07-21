@@ -60,7 +60,8 @@ typedef struct {
 	hc12StatusEnum status;
 	hc12cfg_t *hc12Cfg;
 	const hc12ThreadCfg_t *threadCfg;
-	binary_semaphore_t uart_bsem;
+	binary_semaphore_t uart_bsem_tx;
+	binary_semaphore_t uart_bsem_rx;
 } hc12State_t;
 
 extern mailbox_t streamTxMail;
