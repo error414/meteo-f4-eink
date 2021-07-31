@@ -1,7 +1,7 @@
-#ifdef ALLOW_GO_TO_SLEEP
 #include "ch.h"
 #include "main.h"
 #include "appCfg.h"
+#ifdef ALLOW_GO_TO_SLEEP
 #include "intervalThread.h"
 #include "guiThread.h"
 
@@ -18,10 +18,9 @@ static THD_FUNCTION(intervalThread, arg) {
 	chEvtRegisterMask(&guiDone_event_source,  &allDone_listener, EVENT_MASK(0));
 
 	while (true) {
-
-		chEvtWaitOneTimeout(EVENT_MASK(0), APP_TIMING_MAX_WOKE_TIMEOUT * 10000);
+		//chEvtWaitOneTimeout(EVENT_MASK(0), TIME_S2I(APP_TIMING_MAX_WOKE_TIMEOUT));
+        chEvtWaitOneTimeout(EVENT_MASK(0), TIME_INFINITE);
 		chBSemWait(&sleepSem);
-
 		wakeupspec.wutr = ((uint32_t)4) << 16;  //select 1 Hz clock source
 		wakeupspec.wutr |= APP_TIMING_SLEEP_INTERVAL - 1;  //set counter value to 9. Period will be 9+1 seconds.
 		rtcSTM32SetPeriodicWakeup(&RTCD1, &wakeupspec);

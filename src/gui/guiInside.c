@@ -191,7 +191,7 @@ void guiInitInside(lv_obj_t *parent, uint16_t posY, uint16_t height, const char 
 
 	lv_chart_set_range(guiInsideObject.tempChart, 10, 35);
 	lv_chart_set_point_count(guiInsideObject.tempChart, 24 * 6); // 24hours * 10 min
-	lv_chart_set_div_line_count(guiInsideObject.tempChart, 6, 0);
+	lv_chart_set_div_line_count(guiInsideObject.tempChart, 4, 0);
 
 
 	lv_chart_set_y_tick_texts(guiInsideObject.tempChart, "10\n15\n20\n25\n30\n35", 6, LV_CHART_AXIS_DRAW_LAST_TICK | LV_CHART_AXIS_INVERSE_LABELS_ORDER);
@@ -200,6 +200,9 @@ void guiInitInside(lv_obj_t *parent, uint16_t posY, uint16_t height, const char 
 	lv_obj_set_style_local_text_font(guiInsideObject.tempChart, LV_OBJ_PART_MAIN, LV_STATE_DEFAULT, &lv_font_montserrat_12);
 	lv_obj_set_style_local_pad_bottom(guiInsideObject.tempChart, LV_OBJ_PART_MAIN, LV_STATE_DEFAULT, 10);
 	lv_obj_set_style_local_pad_left(guiInsideObject.tempChart, LV_OBJ_PART_MAIN, LV_STATE_DEFAULT, 50);
+
+    /*Add two data series*/
+    guiInsideChartTempSer = lv_chart_add_series(guiInsideObject.tempChart, LV_COLOR_BLACK);
 }
 
 /**
@@ -209,7 +212,7 @@ void guiInitInside(lv_obj_t *parent, uint16_t posY, uint16_t height, const char 
 void guiFillInsideAll(guiInsideValues_t* values){
     ///////////////////////////////////////////////////////////////////////////////
 	char bufferTempBedroomLabel[10];
-	chsnprintf(bufferTempBedroomLabel, sizeof(bufferTempBedroomLabel), "xxxx%.1f", (float)((float)values->tempBedroom / 100.0f) - 100);
+	chsnprintf(bufferTempBedroomLabel, sizeof(bufferTempBedroomLabel), "%.1f", (float)((float)values->tempBedroom / 100.0f) - 100);
 	lv_label_set_text(guiInsideObject.tempBedroomLabel, bufferTempBedroomLabel);
 
 	char bufferTempRoomLabel[10];
@@ -233,5 +236,7 @@ void guiFillInsideAll(guiInsideValues_t* values){
 	chsnprintf(bufferPresureRoomLabel, sizeof(bufferPresureRoomLabel), "%d", values->pressureRoom);
 	lv_label_set_text(guiInsideObject.presureRoomLabel, bufferPresureRoomLabel);
 
-	lv_chart_set_next(guiInsideObject.tempChart, guiInsideChartTempSer, (lv_coord_t)((values->tempRoom / 100) - 100));
+    for(uint8_t i = 0; i < (uint8_t)sizeof(values->chartSeries); i++){
+        lv_chart_set_next(guiInsideObject.tempChart, guiInsideChartTempSer, (lv_coord_t)((values->chartSeries[i] / 2)  - 50));
+    }
 }

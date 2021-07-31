@@ -40,7 +40,7 @@ static THD_FUNCTION(hc12StreamRXMSPThread, arg) {
 		}
 
 		chBSemSignal(&hc12State.uart_bsem_rx);
-		chThdSleepMilliseconds(100);
+		//chThdSleepMilliseconds(100);
 	}
 }
 

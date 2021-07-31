@@ -12,7 +12,7 @@
 #include "hc12Thread.h"
 #include "bmp280Thread.h"
 #include "hwListThread.h"
-#include "intervalThread.h_"
+#include "intervalThread.h"
 #include "powerThread.h"
 
 mainData_t mainData;
@@ -22,7 +22,7 @@ static bool checkI2CCondition(I2CDriver *driver);
  * Application entry point.
  */
 int main(void) {
-	halInit();
+ 	halInit();
 	chSysInit();
 
 #ifdef USE_SHELL

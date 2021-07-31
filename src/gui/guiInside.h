@@ -10,7 +10,7 @@ typedef struct {
     uint32_t humidityRoom;
     uint32_t pressureBedroom;
     uint32_t pressureRoom;
-
+    uint8_t chartSeries[24 * 6];
 } guiInsideValues_t;
 
 void guiInitInside(lv_obj_t *parent, uint16_t posY, uint16_t height, const char *name1, const char *name2);

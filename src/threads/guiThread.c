@@ -10,7 +10,7 @@
 #include "guiForecast.h"
 #include "guiOutside.h"
 #include "guiInside.h"
-#include "intervalThread.h_"
+#include "intervalThread.h"
 #include "appCfg.h"
 
 #define LVGL_BUFFER_SIZE LV_HOR_RES_MAX * 10
@@ -66,8 +66,7 @@ static THD_FUNCTION(guiThread, arg) {
 	guiFillForecast(&forecastValues);
 
 	guiInitOutside(lv_scr_act(), HEIGHT_FORECAST + HEIGHT_HEADER, HEIGHT_HEADER, "--- Balkon ---");
-	guiInitInside(lv_scr_act(), HEIGHT_FORECAST + HEIGHT_HEADER, HEIGHT_HEADER, "--- Pokoj ---", "--- Loznic ---");
-	guiFillInsideAll(&insideValues);
+	guiInitInside(lv_scr_act(), HEIGHT_FORECAST + HEIGHT_HEADER, HEIGHT_HEADER, "--- Loznic ---", "--- Pokoj ---");
 
 	guiCreateBackground();
 	/////////////////////////////////////////////////////////////////
@@ -144,7 +143,7 @@ static void Gui__LVGLdispFlushCb(lv_disp_drv_t *disp, const lv_area_t *area, lv_
 		EPD_7IN5_HD_Sleep();
 		blackTransmission = true;
 
-		//chEvtBroadcast(&guiDone_event_source);
+		chEvtBroadcast(&guiDone_event_source);
 		chThdSleepMilliseconds(500);
 	}
 

@@ -26,10 +26,10 @@ void guiInitMainHeader(const char *placeName){
     /*guiMainHeaderObject.battIcon = lv_img_create(labelHeaderRigtBlock, NULL);
     lv_obj_align(guiMainHeaderObject.battIcon, NULL, LV_ALIGN_IN_RIGHT_MID, -50, 0);*/
 
-    guiMainHeaderObject.battLabel = lv_label_create(labelHeaderRigtBlock, NULL);
+   /* guiMainHeaderObject.battLabel = lv_label_create(labelHeaderRigtBlock, NULL);
     lv_obj_add_style(guiMainHeaderObject.battLabel, LV_OBJ_PART_MAIN, &styleFontText12);
     lv_obj_add_style(guiMainHeaderObject.battLabel, LV_OBJ_PART_MAIN, &noBorder);
-    lv_obj_align(guiMainHeaderObject.battLabel, NULL, LV_ALIGN_IN_RIGHT_MID, -10, 2);
+    lv_obj_align(guiMainHeaderObject.battLabel, NULL, LV_ALIGN_IN_RIGHT_MID, -10, 2);*/
 }
 
 void guiFillMainHeader(guiMainHeaderValues_t* values){
@@ -46,5 +46,5 @@ void guiFillMainHeader(guiMainHeaderValues_t* values){
     }*/
     //lv_obj_align(guiMainHeaderObject.battIcon, NULL, LV_ALIGN_IN_RIGHT_MID, -50, 0);
 
-    lv_label_set_text(guiMainHeaderObject.battLabel, "4.15V");
+    //lv_label_set_text(guiMainHeaderObject.battLabel, "4.15V");
 }

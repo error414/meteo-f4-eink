@@ -12,6 +12,7 @@ static hw_t bmp280HW;
 #define BMP280_HUM 1
 #define BMP280_PRESSURE 2
 
+static thread_reference_t trp;
 static BMP280_HandleTypedef BMP280_dev;
 static const Bmp280__threadConfig_t *bmp280ThreadCfg;
 
@@ -63,6 +64,10 @@ static THD_FUNCTION(Bmp280Thread, arg) {
 			if (messagePoolObject) {
 				MSP__createMspFrame(messagePoolObject, (uint8_t)bmp280HW.id, 3, (uint32_t*)&streamBuff);
 				chMBPostTimeout(&streamTxMail, (msg_t) messagePoolObject, TIME_IMMEDIATE);
+
+                chSysLock();
+				chThdSuspendS(&trp);
+				chSysUnlock();
 			}
 		}else{
 			bmp280HW.status = HW_STATUS_ERROR;

@@ -31,6 +31,7 @@ typedef struct {
     uint32_t uvIndex;
     uint32_t voltagePercent;
 	bool rain;
+    uint8_t chartSeries[24 * 6];
 } dataOutside_t;
 
 typedef struct {
@@ -40,6 +41,7 @@ typedef struct {
     uint32_t humidityRoom;
     uint32_t pressureBedroom;
     uint32_t pressureRoom;
+    uint8_t chartSeries[24 * 6];
 } dataInside_t;
 
 

@@ -1,7 +1,7 @@
 #ifndef MSP_H
 #define MSP_H
 
-#define MSP_MAX_DATA_SIZE 64
+#define MSP_MAX_DATA_SIZE 255
 
 #include "ch.h"
 #include "pools.h"

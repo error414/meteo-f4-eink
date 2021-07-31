@@ -19,6 +19,7 @@ static ADS1X15_device_t adcDev = {
 
 static power__threadConfig_t *powerThreadCfg;
 static hw_t powerHW;
+static thread_reference_t trp;
 
 static THD_WORKING_AREA(POWERVA, 190);
 static THD_FUNCTION(powerThread, arg) {
@@ -47,7 +48,7 @@ static THD_FUNCTION(powerThread, arg) {
 	static uint16_t battAdcValue;
 	static uint16_t solarAdcValue;
 
-	uint32_t streamBuff[4];
+	uint32_t streamBuff[3];
 	while (true) {
 		if(powerHW.status == HW_STATUS_ERROR){
 			ADS__init(&adcDev); // try reconfigure
@@ -57,9 +58,9 @@ static THD_FUNCTION(powerThread, arg) {
 			chSysLock();
 			bool chrg = !palReadLine(powerThreadCfg->chrgInfoLine);
 
-			streamBuff[1] = powerHW.values[POWER_VOLTAGE_BATT].value    = (uint32_t)(ADS__toVoltage(&adcDev, battAdcValue) * 100);
-			streamBuff[2] = powerHW.values[POWER_CHRG_STATUS].value     = chrg;
-			streamBuff[3] = powerHW.values[POWER_STDBY_STATUS].value    = !palReadLine(powerThreadCfg->stdbyInfoLine);
+			streamBuff[0] = powerHW.values[POWER_VOLTAGE_BATT].value    = (uint16_t)(ADS__toVoltage(&adcDev, battAdcValue) * 100);
+			streamBuff[1] = powerHW.values[POWER_CHRG_STATUS].value     = chrg;
+			streamBuff[2] = powerHW.values[POWER_STDBY_STATUS].value    = !palReadLine(powerThreadCfg->stdbyInfoLine);
 			powerHW.status = HW_STATUS_OK;
 			chSysUnlock();
 
@@ -67,6 +68,10 @@ static THD_FUNCTION(powerThread, arg) {
 			if (messagePoolObject) {
 				MSP__createMspFrame(messagePoolObject, (uint8_t)powerHW.id, 3, (uint32_t*)&streamBuff);
 				chMBPostTimeout(&streamTxMail, (msg_t) messagePoolObject, TIME_IMMEDIATE);
+
+                chSysLock();
+                chThdSuspendS(&trp);
+                chSysUnlock();
 			}
 		}else{
 			powerHW.status = HW_STATUS_ERROR;

@@ -4,18 +4,18 @@
 #include "hal.h"
 
 #define HC12_HW_ID_OFFSET 10
-//#define ALLOW_GO_TO_SLEEP
+#define ALLOW_GO_TO_SLEEP
 
 ////////////////////////////////////////
 ///// TIMMING /////////////////////////
 ////////////////////////////////////////
 //in second
 #ifdef ALLOW_GO_TO_SLEEP
-    #define APP_TIMING_SLEEP_INTERVAL   15
-    #define APP_TIMING_MAX_WOKE_TIMEOUT  40
+    #define APP_TIMING_SLEEP_INTERVAL   1200
+    #define APP_TIMING_MAX_WOKE_TIMEOUT  20
 #endif
 
-#define APP_TIMING_WAIT_FOR_DATA_TIMEOUT  5
+#define APP_TIMING_WAIT_FOR_DATA_TIMEOUT  40
 ////////////////////////////////////////
 
 ////////////////////////////////////////

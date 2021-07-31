@@ -201,12 +201,12 @@ void guiInitOutside(lv_obj_t *parent, uint16_t posY, uint16_t height, const char
     lv_obj_align(guiOutsideObject.tempChart, NULL, LV_ALIGN_CENTER, 0, 0);
     lv_chart_set_type(guiOutsideObject.tempChart, LV_CHART_TYPE_LINE );   /*Show lines and points too*/
 
-    lv_chart_set_range(guiOutsideObject.tempChart, -20, 40);
+    lv_chart_set_range(guiOutsideObject.tempChart, -20, 50);
     lv_chart_set_point_count(guiOutsideObject.tempChart, 24 * 6); // 24hours * 10 min
-    lv_chart_set_div_line_count(guiOutsideObject.tempChart, 7, 0);
+    lv_chart_set_div_line_count(guiOutsideObject.tempChart, 8, 0);
 
 
-    lv_chart_set_y_tick_texts(guiOutsideObject.tempChart, "-20\n-10\n0\n10\n20\n30\n40", 7, LV_CHART_AXIS_DRAW_LAST_TICK | LV_CHART_AXIS_INVERSE_LABELS_ORDER);
+    lv_chart_set_y_tick_texts(guiOutsideObject.tempChart, "-20\n-10\n0\n10\n20\n30\n40\n50", 8, LV_CHART_AXIS_DRAW_LAST_TICK | LV_CHART_AXIS_INVERSE_LABELS_ORDER);
     lv_chart_set_y_tick_length(guiOutsideObject.tempChart, 4, 0);
     lv_obj_set_style_local_text_color(guiOutsideObject.tempChart, LV_OBJ_PART_MAIN, LV_STATE_DEFAULT, LV_COLOR_BLACK);
     lv_obj_set_style_local_text_font(guiOutsideObject.tempChart, LV_OBJ_PART_MAIN, LV_STATE_DEFAULT, &lv_font_montserrat_12);
@@ -224,7 +224,7 @@ void guiInitOutside(lv_obj_t *parent, uint16_t posY, uint16_t height, const char
 void guiFillOutsideAll(guiOutsideValues_t* values){
     ///////////////////////////////////////////////////////////////////////////////
 	char bufferBattLabel[10];
-	chsnprintf(bufferBattLabel, sizeof(bufferBattLabel), "%.2fV", (float)values->voltage / 100.0f);
+	chsnprintf(bufferBattLabel, sizeof(bufferBattLabel), "%.2fV", (float)((float)values->voltage / 100.0f) - 100);
     lv_label_set_text(guiOutsideObject.battLabel, bufferBattLabel);
 
 	char bufferTempLabel[10];
@@ -256,5 +256,8 @@ void guiFillOutsideAll(guiOutsideValues_t* values){
 	chsnprintf(bufferLightLabel, sizeof(bufferLightLabel), "%d", values->sunlight);
     lv_label_set_text(guiOutsideObject.lightLabel, bufferLightLabel);
 
-    lv_chart_set_next(guiOutsideObject.tempChart, guiOutsideChartTempSer, (lv_coord_t)((values->temp / 100) - 100));
+    for(uint8_t i = 0; i < (uint8_t)sizeof(values->chartSeries); i++){
+        lv_chart_set_next(guiOutsideObject.tempChart, guiOutsideChartTempSer, (lv_coord_t)((values->chartSeries[i] / 2)  - 50));
+    }
+
 }

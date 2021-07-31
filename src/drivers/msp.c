@@ -48,14 +48,12 @@ void MSP__createMspFrame(poolStreamObject_t *streamObject, uint8_t cmd, uint32_t
  */
 bool MSP__parseMspFrameLoop(const char c){
 
-    volatile systime_t ccc;
-    ccc = chVTGetSystemTimeX();
-    /*if(MSP_status.indexMSP > 0 && MSP_status.lastRunTime > 0 && ccc - MSP_status.lastRunTime > 10000){
+    if(MSP_status.indexMSP > 0 && MSP_status.lastRunTime > 0 && chVTGetSystemTimeX() - MSP_status.lastRunTime > 25000){
 		MSP_status.indexMSP = 0;
 		MSP_status.indexPayloadMSP = 0;
 		MSP_status.lastRunTime = chVTGetSystemTimeX();
 		return false;
-	}*/
+	}
 
 	if (MSP_status.indexMSP == 0 && c == '$') {
 		MSP_status.indexMSP++;

@@ -7,7 +7,7 @@
 #include "chprintf.h"
 #include "hc12Thread.h"
 #include "hwListThread.h"
-#include "intervalThread.h_"
+#include "intervalThread.h"
 
 #if (SHELL_CMD_THREADS_ENABLED == TRUE) || defined(__DOXYGEN__)
 static void cmd_threads(BaseSequentialStream *chp, int argc, char *argv[]) {
